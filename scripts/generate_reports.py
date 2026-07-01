@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-升学规划批量报告生成器 (纯内存高效版)
+升学规划批量报告生成器 (纯内存历年数据升级版)
 
 直接读取 data/raw/2025/ 目录下的 JSON 文本文件装载到内存中，无需依赖 DuckDB。
-读取 data/input_students.json，为每个学生生成精美的 Markdown 规划报告。
+读取 data/input_students.json，为每个学生生成精美的包含历年投档线走势的 Markdown 规划报告。
 """
 import sys
 import os
@@ -43,22 +43,25 @@ def load_universities_from_json(data_dir: Path) -> list[University]:
         ) for u in uni_data
     ]
 
-def load_score_data_from_json(data_dir: Path) -> dict[int, ScoreRange]:
-    """直接从 JSON 分数文件在内存中聚合计算出 ScoreRange"""
+def load_score_data_from_json(data_dir: Path) -> tuple[dict[int, ScoreRange], list[dict]]:
+    """直接从 JSON 分数文件在内存中过滤 2025 年数据用于计算，并保留完整数据列表用于历史匹配"""
     file_path = data_dir / "scores_2025.json"
     logger.info(f"从 {file_path} 加载并聚合分数数据...")
     
     with open(file_path, encoding="utf-8") as f:
         scores_raw = json.load(f)
         
-    # 按 university_id 归类分数和位次
+    # 按 university_id 归类 2025 年的分数和位次
     uni_scores = {}
     for s in scores_raw:
+        # 只取 2025 年数据用于“当前规划”的匹配基准
+        if s.get("year") != 2025:
+            continue
+            
         uni_id = s["university_id"]
         min_score = s.get("min_score")
         min_rank = s.get("min_rank")
         
-        # 仅统计有效成绩
         if min_score is not None and min_rank is not None:
             uni_scores.setdefault(uni_id, []).append((min_score, min_rank))
             
@@ -72,7 +75,6 @@ def load_score_data_from_json(data_dir: Path) -> dict[int, ScoreRange]:
         avg_score = int(sum(scores) / len(scores))
         max_score = max(scores)
         
-        # 位次数字越大，说明排名越后（最低位次），位次数字越小说明排名越前（最高位次）
         min_rank = max(ranks)  # 投档最低位次（数值最大）
         avg_rank = int(sum(ranks) / len(ranks))
         max_rank = min(ranks)  # 投档最高位次（数值最小）
@@ -86,9 +88,62 @@ def load_score_data_from_json(data_dir: Path) -> dict[int, ScoreRange]:
             max_rank=max_rank
         )
         
-    return score_data
+    return score_data, scores_raw
 
-def generate_markdown_report(student: Student, result) -> str:
+def major_matches(category_name: str, specific_name: str) -> bool:
+    """判断具体专业名是否属于大类专业"""
+    if not category_name or not specific_name:
+        return False
+    if category_name == specific_name:
+        return True
+    cat = category_name.strip()
+    spec = specific_name.strip()
+    if cat.endswith("类"):
+        core = cat[:-1]
+    else:
+        core = cat
+    if core in spec:
+        return True
+        
+    special_mappings = {
+        "计算机类": ["计算机", "软件", "大数据", "网络工程", "人工智能", "信息安全", "智能科学与技术"],
+        "电子信息类": ["电子", "通信", "集成电路", "微电子", "光电"],
+        "经济学类": ["经济", "金融", "财政", "税收"],
+        "工商管理类": ["管理", "会计", "财务", "审计", "营销"],
+        "数学类": ["数学", "统计"],
+    }
+    if cat in special_mappings:
+        for keyword in special_mappings[cat]:
+            if keyword in spec:
+                return True
+    return False
+
+def format_history_scores(target, scores_raw: list[dict], major_id_to_name: dict) -> str:
+    """提取该院校推荐分类下的相关专业历年录取最低分数走势"""
+    history_by_year = {}
+    for s in scores_raw:
+        if s["university_id"] == target.university.id:
+            m_name = major_id_to_name.get(s["major_id"])
+            if m_name and major_matches(target.major, m_name):
+                history_by_year.setdefault(s["year"], []).append(s)
+                
+    years = sorted(list(history_by_year.keys()), reverse=True)
+    
+    parts = []
+    for y in years:
+        if y == 2025:
+            continue
+        year_scores = history_by_year[y]
+        min_score = min(x["min_score"] for x in year_scores)
+        max_rank = max(x["min_rank"] for x in year_scores)
+        parts.append(f"{y}年: {min_score}分(位次第{max_rank}名)")
+        
+    if not parts:
+        return "暂无往年同大类专业录取参考数据"
+        
+    return "历年参考投档线：" + "；".join(parts)
+
+def generate_markdown_report(student: Student, result, scores_raw: list[dict], major_id_to_name: dict) -> str:
     """生成 Markdown 报告格式文本"""
     interests = "、".join(student.interests or []) if student.interests else "无"
     locations = "、".join(student.preferred_locations or []) if student.preferred_locations else "不限"
@@ -131,9 +186,11 @@ def generate_markdown_report(student: Student, result) -> str:
 """
     if result.high_targets:
         for i, target in enumerate(result.high_targets, 1):
+            history_str = format_history_scores(target, scores_raw, major_id_to_name)
             report += f"{i}. **{target.university.name}** ({target.university.location})\n"
-            report += f"   - **推荐专业**：{target.major or '相关计算机/热门专业'}\n"
+            report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
             report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
+            report += f"   - **{history_str}**\n"
             report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
             report += f"   - **规划建议**：{target.analysis or '分数线接近，建议作为冲刺志愿填报，关注省排名动态。'}\n\n"
     else:
@@ -143,9 +200,11 @@ def generate_markdown_report(student: Student, result) -> str:
 """
     if result.medium_targets:
         for i, target in enumerate(result.medium_targets, 1):
+            history_str = format_history_scores(target, scores_raw, major_id_to_name)
             report += f"{i}. **{target.university.name}** ({target.university.location})\n"
-            report += f"   - **推荐专业**：{target.major or '相关计算机/热门专业'}\n"
+            report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
             report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
+            report += f"   - **{history_str}**\n"
             report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
             report += f"   - **规划建议**：{target.analysis or '分数匹配度高，录取概率较大，建议作为稳妥志愿填报。'}\n\n"
     else:
@@ -155,9 +214,11 @@ def generate_markdown_report(student: Student, result) -> str:
 """
     if result.low_targets:
         for i, target in enumerate(result.low_targets, 1):
+            history_str = format_history_scores(target, scores_raw, major_id_to_name)
             report += f"{i}. **{target.university.name}** ({target.university.location})\n"
-            report += f"   - **推荐专业**：{target.major or '相关计算机/热门专业'}\n"
+            report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
             report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
+            report += f"   - **{history_str}**\n"
             report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
             report += f"   - **规划建议**：{target.analysis or '分数留有充足安全余量，录取极有保障，建议作为保底志愿填报。'}\n\n"
     else:
@@ -191,7 +252,12 @@ def main():
     # 纯内存直接读取 JSON，免去 DuckDB 初始化和 SQL 开销
     logger.info("⚡️ 正在以纯内存 JSON 直读模式加载高校和分数映射数据...")
     universities = load_universities_from_json(data_dir)
-    score_data = load_score_data_from_json(data_dir)
+    score_data, scores_raw = load_score_data_from_json(data_dir)
+    
+    # 加载专业库，用于历史映射名称查询
+    with open(data_dir / "majors_2025.json", encoding="utf-8") as f:
+        majors_raw = json.load(f)
+    major_id_to_name = {m["id"]: m["name"] for m in majors_raw}
     
     # 初始化规划引擎（传 None，内存中计算不需要连接数据库）
     engine = PlanningEngine(None)
@@ -229,8 +295,8 @@ def main():
         # 运行规划计算
         result = engine.generate_plan(student, universities, score_data)
         
-        # 渲染 Markdown
-        report_md = generate_markdown_report(student, result)
+        # 渲染 Markdown (包含历年分数趋势数据)
+        report_md = generate_markdown_report(student, result, scores_raw, major_id_to_name)
         
         # 写入文件
         report_file = output_dir / f"{student.name}_升学规划报告.md"

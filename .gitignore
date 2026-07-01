@@ -48,6 +48,7 @@ data/duckdb/*.db
 data/imports/*.xlsx
 data/imports/*.csv
 data/raw/2025/*.xlsx
+data/raw/2025/*.zip
 
 # 日志
 *.log

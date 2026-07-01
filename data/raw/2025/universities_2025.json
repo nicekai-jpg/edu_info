@@ -11,6 +11,28 @@
     "project_type": null
   },
   {
+    "id": 2,
+    "name": "中国人民大学",
+    "code": "0002",
+    "location": "未知",
+    "type": "综合",
+    "is_985": true,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": null
+  },
+  {
+    "id": 3,
+    "name": "清华大学",
+    "code": "0003",
+    "location": "北京",
+    "type": "综合",
+    "is_985": true,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": null
+  },
+  {
     "id": 4,
     "name": "北京交通大学",
     "code": "0004",
@@ -85,6 +107,17 @@
     "is_985": false,
     "is_211": true,
     "is_double_first_class": true,
+    "project_type": null
+  },
+  {
+    "id": 11,
+    "name": "北京工商大学",
+    "code": "0011",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
     "project_type": null
   },
   {
@@ -297,6 +330,17 @@
     "project_type": null
   },
   {
+    "id": 41,
+    "name": "中国人民公安大学",
+    "code": "0041",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 43,
     "name": "北京体育大学",
     "code": "0043",
@@ -311,6 +355,17 @@
     "id": 47,
     "name": "中央美术学院",
     "code": "0047",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 48,
+    "name": "中央戏剧学院",
+    "code": "0048",
     "location": "其他",
     "type": "综合",
     "is_985": false,
@@ -737,6 +792,17 @@
     "project_type": null
   },
   {
+    "id": 107,
+    "name": "石家庄铁道大学",
+    "code": "0107",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 108,
     "name": "山西大学",
     "code": "0108",
@@ -971,6 +1037,17 @@
     "id": 136,
     "name": "内蒙古民族大学",
     "code": "0136",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 138,
+    "name": "赤峰学院",
+    "code": "0138",
     "location": "其他",
     "type": "综合",
     "is_985": false,
@@ -1650,6 +1727,17 @@
     "project_type": null
   },
   {
+    "id": 234,
+    "name": "哈尔滨学院",
+    "code": "0234",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 235,
     "name": "大庆师范学院",
     "code": "0235",
@@ -2079,6 +2167,17 @@
     "project_type": null
   },
   {
+    "id": 315,
+    "name": "南京中医药大学",
+    "code": "0315",
+    "location": "其他",
+    "type": "医药",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 316,
     "name": "中国药科大学",
     "code": "0316",
@@ -2192,6 +2291,17 @@
     "id": 340,
     "name": "浙江海洋大学",
     "code": "0340",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 341,
+    "name": "浙江农林大学",
+    "code": "0341",
     "location": "其他",
     "type": "综合",
     "is_985": false,
@@ -2412,6 +2522,17 @@
     "id": 366,
     "name": "安徽医科大学",
     "code": "0366",
+    "location": "其他",
+    "type": "医药",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 367,
+    "name": "蚌埠医科大学",
+    "code": "0367",
     "location": "其他",
     "type": "医药",
     "is_985": false,
@@ -2874,6 +2995,17 @@
     "id": 439,
     "name": "山东第一医科大学",
     "code": "0439",
+    "location": "其他",
+    "type": "医药",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 440,
+    "name": "滨州医学院",
+    "code": "0440",
     "location": "其他",
     "type": "医药",
     "is_985": false,
@@ -3388,6 +3520,17 @@
     "project_type": null
   },
   {
+    "id": 522,
+    "name": "武汉体育学院",
+    "code": "0522",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 524,
     "name": "中南民族大学",
     "code": "0524",
@@ -3663,6 +3806,28 @@
     "project_type": null
   },
   {
+    "id": 564,
+    "name": "华南农业大学",
+    "code": "0564",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 566,
+    "name": "广东海洋大学",
+    "code": "0566",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 571,
     "name": "广东医科大学",
     "code": "0571",
@@ -3707,6 +3872,17 @@
     "project_type": null
   },
   {
+    "id": 576,
+    "name": "韶关学院",
+    "code": "0576",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 577,
     "name": "惠州学院",
     "code": "0577",
@@ -3732,6 +3908,17 @@
     "id": 579,
     "name": "岭南师范学院",
     "code": "0579",
+    "location": "其他",
+    "type": "师范",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 588,
+    "name": "广东技术师范大学",
+    "code": "0588",
     "location": "其他",
     "type": "师范",
     "is_985": false,
@@ -3831,6 +4018,17 @@
     "id": 599,
     "name": "右江民族医学院",
     "code": "0599",
+    "location": "其他",
+    "type": "医药",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 600,
+    "name": "广西中医药大学",
+    "code": "0600",
     "location": "其他",
     "type": "医药",
     "is_985": false,
@@ -4191,6 +4389,17 @@
     "project_type": null
   },
   {
+    "id": 649,
+    "name": "乐山师范学院",
+    "code": "0649",
+    "location": "其他",
+    "type": "师范",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 650,
     "name": "四川外国语大学",
     "code": "0650",
@@ -4227,6 +4436,17 @@
     "id": 653,
     "name": "成都体育学院",
     "code": "0653",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 655,
+    "name": "四川美术学院",
+    "code": "0655",
     "location": "其他",
     "type": "综合",
     "is_985": false,
@@ -4752,6 +4972,17 @@
     "project_type": null
   },
   {
+    "id": 737,
+    "name": "兰州城市学院",
+    "code": "0737",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 738,
     "name": "陇东学院",
     "code": "0738",
@@ -5137,6 +5368,17 @@
     "project_type": null
   },
   {
+    "id": 895,
+    "name": "萍乡学院",
+    "code": "0895",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 918,
     "name": "黄淮学院",
     "code": "0918",
@@ -5285,6 +5527,17 @@
     "code": "1053",
     "location": "其他",
     "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 1055,
+    "name": "常州工学院",
+    "code": "1055",
+    "location": "其他",
+    "type": "综合",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -5483,6 +5736,17 @@
     "code": "1104",
     "location": "其他",
     "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 1106,
+    "name": "广州航海学院",
+    "code": "1106",
+    "location": "其他",
+    "type": "综合",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -5701,6 +5965,17 @@
     "id": 1390,
     "name": "玉溪师范学院",
     "code": "1390",
+    "location": "其他",
+    "type": "师范",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 1391,
+    "name": "楚雄师范学院",
+    "code": "1391",
     "location": "其他",
     "type": "师范",
     "is_985": false,
@@ -6121,6 +6396,17 @@
     "code": "1600",
     "location": "其他",
     "type": "财经",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 1607,
+    "name": "北部湾大学",
+    "code": "1607",
+    "location": "其他",
+    "type": "综合",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -6578,6 +6864,17 @@
     "project_type": null
   },
   {
+    "id": 2303,
+    "name": "湖南涉外经济学院",
+    "code": "2303",
+    "location": "其他",
+    "type": "财经",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 2308,
     "name": "海口经济学院",
     "code": "2308",
@@ -6853,6 +7150,17 @@
     "project_type": null
   },
   {
+    "id": 2734,
+    "name": "新疆警察学院",
+    "code": "2734",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 2747,
     "name": "郑州工业应用技术学院",
     "code": "2747",
@@ -7106,6 +7414,17 @@
     "project_type": null
   },
   {
+    "id": 3234,
+    "name": "湖北大学知行学院",
+    "code": "3234",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 3235,
     "name": "武汉城市学院",
     "code": "3235",
@@ -7120,6 +7439,17 @@
     "id": 3236,
     "name": "三峡大学科技学院",
     "code": "3236",
+    "location": "其他",
+    "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3239,
+    "name": "武汉工程大学邮电与信息工程学院",
+    "code": "3239",
     "location": "其他",
     "type": "理工",
     "is_985": false,
@@ -7337,6 +7667,17 @@
     "project_type": null
   },
   {
+    "id": 3330,
+    "name": "昆明城市学院",
+    "code": "3330",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 3332,
     "name": "昆明医科大学海源学院",
     "code": "3332",
@@ -7408,6 +7749,17 @@
     "code": "3408",
     "location": "其他",
     "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3411,
+    "name": "河北师范大学汇华学院",
+    "code": "3411",
+    "location": "其他",
+    "type": "师范",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -7491,6 +7843,17 @@
     "project_type": null
   },
   {
+    "id": 3434,
+    "name": "赣南科技学院",
+    "code": "3434",
+    "location": "其他",
+    "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 3435,
     "name": "景德镇艺术职业大学",
     "code": "3435",
@@ -7507,6 +7870,17 @@
     "code": "3436",
     "location": "其他",
     "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3437,
+    "name": "南昌医学院",
+    "code": "3437",
+    "location": "其他",
+    "type": "医药",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -7700,6 +8074,17 @@
     "project_type": null
   },
   {
+    "id": 3579,
+    "name": "中国矿业大学徐海学院",
+    "code": "3579",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 3588,
     "name": "重庆外语外事学院",
     "code": "3588",
@@ -7749,6 +8134,17 @@
     "code": "3594",
     "location": "其他",
     "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3596,
+    "name": "华北理工大学冀唐学院",
+    "code": "3596",
+    "location": "其他",
+    "type": "理工",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -7942,6 +8338,17 @@
     "project_type": null
   },
   {
+    "id": 3630,
+    "name": "北京工商大学嘉华学院",
+    "code": "3630",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 3631,
     "name": "大连东软信息学院",
     "code": "3631",
@@ -7958,6 +8365,28 @@
     "code": "3632",
     "location": "其他",
     "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3634,
+    "name": "武汉学院",
+    "code": "3634",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3635,
+    "name": "长沙理工大学城南学院",
+    "code": "3635",
+    "location": "其他",
+    "type": "理工",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -7989,6 +8418,17 @@
     "id": 3644,
     "name": "桂林信息科技学院",
     "code": "3644",
+    "location": "其他",
+    "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3645,
+    "name": "南宁理工学院",
+    "code": "3645",
     "location": "其他",
     "type": "理工",
     "is_985": false,
@@ -8145,6 +8585,17 @@
     "code": "3673",
     "location": "其他",
     "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 3675,
+    "name": "北京理工大学珠海学院",
+    "code": "3675",
+    "location": "其他",
+    "type": "理工",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -8426,6 +8877,17 @@
     "project_type": null
   },
   {
+    "id": 3895,
+    "name": "燕京理工学院",
+    "code": "3895",
+    "location": "其他",
+    "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 3897,
     "name": "天津理工大学中环信息学院",
     "code": "3897",
@@ -8635,6 +9097,17 @@
     "project_type": null
   },
   {
+    "id": 4002,
+    "name": "烟台科技学院",
+    "code": "4002",
+    "location": "其他",
+    "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 4037,
     "name": "西南财经大学天府学院",
     "code": "4037",
@@ -8684,6 +9157,17 @@
     "code": "4042",
     "location": "其他",
     "type": "理工",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 4043,
+    "name": "四川文化艺术学院",
+    "code": "4043",
+    "location": "其他",
+    "type": "综合",
     "is_985": false,
     "is_211": false,
     "is_double_first_class": false,
@@ -8910,6 +9394,17 @@
     "project_type": null
   },
   {
+    "id": 4531,
+    "name": "内蒙古艺术学院",
+    "code": "4531",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 4596,
     "name": "中国社会科学院大学",
     "code": "4596",
@@ -9031,6 +9526,17 @@
     "project_type": null
   },
   {
+    "id": 6209,
+    "name": "兰州石化职业技术大学",
+    "code": "6209",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
     "id": 6301,
     "name": "宁波诺丁汉大学",
     "code": "6301",
@@ -9122,6 +9628,17 @@
     "id": 9004,
     "name": "北京交通大学(威海校区)",
     "code": "9004",
+    "location": "其他",
+    "type": "综合",
+    "is_985": false,
+    "is_211": false,
+    "is_double_first_class": false,
+    "project_type": null
+  },
+  {
+    "id": 9013,
+    "name": "北京邮电大学(宏福校区)",
+    "code": "9013",
     "location": "其他",
     "type": "综合",
     "is_985": false,
