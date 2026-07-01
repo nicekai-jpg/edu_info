@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-升学规划批量报告生成器
+升学规划批量报告生成器 (纯内存高效版)
 
-读取 data/input_students.json，利用规划引擎计算后为每个学生生成精美的 Markdown 报告。
+直接读取 data/raw/2025/ 目录下的 JSON 文本文件装载到内存中，无需依赖 DuckDB。
+读取 data/input_students.json，为每个学生生成精美的 Markdown 规划报告。
 """
 import sys
 import os
 import json
 from pathlib import Path
-import duckdb
+from datetime import datetime
 
 # 添加 src 到路径
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -20,71 +21,80 @@ from edu_info.utils.logger import setup_logger
 
 logger = setup_logger("batch_report_generator")
 
-def ensure_database():
-    """确保本地 DuckDB 数据库存在并初始化"""
-    db_path = Path("data/duckdb/edu_planning.db")
-    if not db_path.exists():
-        logger.info("数据库文件不存在，正在进行自动初始化与数据导入...")
-        # 调用初始化脚本
-        import subprocess
-        subprocess.run([sys.executable, "scripts/init_database.py"], check=True)
-        subprocess.run([sys.executable, "scripts/import_2025_data.py"], check=True)
-        logger.info("数据库初始化及数据加载完成！")
-    return db_path
-
-def load_universities(conn):
-    """从数据库加载高校列表"""
-    rows = conn.execute("""
-        SELECT id, name, code, location, type, 
-               is_985, is_211, is_double_first_class, project_type 
-        FROM universities
-    """).fetchall()
+def load_universities_from_json(data_dir: Path) -> list[University]:
+    """直接从 JSON 文件加载高校列表"""
+    file_path = data_dir / "universities_2025.json"
+    logger.info(f"从 {file_path} 加载高校数据...")
     
+    with open(file_path, encoding="utf-8") as f:
+        uni_data = json.load(f)
+        
     return [
         University(
-            id=r[0], name=r[1], code=r[2] or "00000", location=r[3] or "未知", type=r[4] or "综合",
-            is_985=bool(r[5]), is_211=bool(r[6]), is_double_first_class=bool(r[7]), project_type=r[8]
-        ) for r in rows
+            id=u["id"],
+            name=u["name"],
+            code=u.get("code") or "00000",
+            location=u.get("location") or "未知",
+            type=u.get("type") or "综合",
+            is_985=bool(u.get("is_985", False)),
+            is_211=bool(u.get("is_211", False)),
+            is_double_first_class=bool(u.get("is_double_first_class", False)),
+            project_type=u.get("project_type")
+        ) for u in uni_data
     ]
 
-def load_score_data(conn):
-    """从数据库计算并加载 2025 年高校的录取分数范围"""
-    rows = conn.execute("""
-        SELECT university_id, 
-               MIN(min_score) as min_score,
-               CAST(AVG(min_score) as INTEGER) as avg_score,
-               MAX(min_score) as max_score,
-               MAX(min_rank) as min_rank,
-               CAST(AVG(min_rank) as INTEGER) as avg_rank,
-               MIN(min_rank) as max_rank
-        FROM admission_scores
-        WHERE year = 2025
-        GROUP BY university_id
-    """).fetchall()
+def load_score_data_from_json(data_dir: Path) -> dict[int, ScoreRange]:
+    """直接从 JSON 分数文件在内存中聚合计算出 ScoreRange"""
+    file_path = data_dir / "scores_2025.json"
+    logger.info(f"从 {file_path} 加载并聚合分数数据...")
     
+    with open(file_path, encoding="utf-8") as f:
+        scores_raw = json.load(f)
+        
+    # 按 university_id 归类分数和位次
+    uni_scores = {}
+    for s in scores_raw:
+        uni_id = s["university_id"]
+        min_score = s.get("min_score")
+        min_rank = s.get("min_rank")
+        
+        # 仅统计有效成绩
+        if min_score is not None and min_rank is not None:
+            uni_scores.setdefault(uni_id, []).append((min_score, min_rank))
+            
+    # 计算并封装成 ScoreRange
     score_data = {}
-    for r in rows:
-        if r[1] is not None and r[4] is not None:
-            score_data[r[0]] = ScoreRange(
-                min_score=r[1],
-                avg_score=r[2] or r[1],
-                max_score=r[3] or r[1],
-                min_rank=r[4],
-                avg_rank=r[5] or r[4],
-                max_rank=r[6] or r[4]
-            )
+    for uni_id, score_tuples in uni_scores.items():
+        scores = [t[0] for t in score_tuples]
+        ranks = [t[1] for t in score_tuples]
+        
+        min_score = min(scores)
+        avg_score = int(sum(scores) / len(scores))
+        max_score = max(scores)
+        
+        # 位次数字越大，说明排名越后（最低位次），位次数字越小说明排名越前（最高位次）
+        min_rank = max(ranks)  # 投档最低位次（数值最大）
+        avg_rank = int(sum(ranks) / len(ranks))
+        max_rank = min(ranks)  # 投档最高位次（数值最小）
+        
+        score_data[uni_id] = ScoreRange(
+            min_score=min_score,
+            avg_score=avg_score,
+            max_score=max_score,
+            min_rank=min_rank,
+            avg_rank=avg_rank,
+            max_rank=max_rank
+        )
+        
     return score_data
 
 def generate_markdown_report(student: Student, result) -> str:
     """生成 Markdown 报告格式文本"""
-    # 格式化兴趣和位置
     interests = "、".join(student.interests or []) if student.interests else "无"
     locations = "、".join(student.preferred_locations or []) if student.preferred_locations else "不限"
     
-    # 最佳通道
     best_match = result.top_routes[0] if result.top_routes else None
     best_route_name = best_match.route.route_name if best_match else "普通高考"
-    best_score = best_match.match_score if best_match else 0
     
     report = f"""# 🧑‍🎓 {student.name} 同学升学规划方案报告
 
@@ -175,19 +185,16 @@ def generate_markdown_report(student: Student, result) -> str:
     return report
 
 def main():
-    # 确保数据库就绪
-    db_path = ensure_database()
+    # 数据目录定义
+    data_dir = Path("data/raw/2025")
     
-    # 建立 DuckDB 连接
-    conn = duckdb.connect(str(db_path))
+    # 纯内存直接读取 JSON，免去 DuckDB 初始化和 SQL 开销
+    logger.info("⚡️ 正在以纯内存 JSON 直读模式加载高校和分数映射数据...")
+    universities = load_universities_from_json(data_dir)
+    score_data = load_score_data_from_json(data_dir)
     
-    # 加载支撑数据
-    logger.info("正在从数据库加载高校和分数映射数据...")
-    universities = load_universities(conn)
-    score_data = load_score_data(conn)
-    
-    # 初始化规划引擎
-    engine = PlanningEngine(str(db_path))
+    # 初始化规划引擎（传 None，内存中计算不需要连接数据库）
+    engine = PlanningEngine(None)
     
     # 读取输入学生名单
     input_file = Path("data/input_students.json")
@@ -240,12 +247,10 @@ def main():
             "推荐赛道": best_route,
             "可行性分": f"{result.overall_feasibility:.1f}"
         })
-        
-    conn.close()
     
     # 输出简要汇总表格
     print("\n" + "="*50)
-    print(" 🚀 规划批量计算与报告生成完成汇总 ")
+    print(" 🚀 规划批量计算与报告生成完成汇总 (纯内存直读版) ")
     print("="*50)
     print(f"{'姓名':<8}{'科类':<8}{'成绩':<8}{'推荐最佳赛道':<16}{'方案可行性分':<10}")
     print("-"*50)
