@@ -20,8 +20,10 @@ class MajorScraperEngine:
 
     async def init_browser(self, headless: bool = True):
         """
-        初始化浏览器，配置随机视口和 Stealth 保护。
+        初始化浏览器，配置随机视口和 Stealth 保护，支持代理设置。
         """
+        import os
+
         self.pw = await async_playwright().start()
         self.browser = await self.pw.chromium.launch(headless=headless)
 
@@ -29,9 +31,17 @@ class MajorScraperEngine:
         width = random.randint(1280, 1920)
         height = random.randint(720, 1080)
 
+        # 检查代理设置
+        proxy_env = os.environ.get("SCRAPER_PROXY")
+        proxy_config = None
+        if proxy_env:
+            proxy_config = {"server": proxy_env}
+            logger.info(f"使用代理进行爬取: {proxy_env}")
+
         self.context = await self.browser.new_context(
             viewport={'width': width, 'height': height},
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            proxy=proxy_config
         )
         logger.info(f"浏览器初始化完成，视口大小: {width}x{height}")
 
