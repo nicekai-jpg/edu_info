@@ -1,0 +1,66 @@
+[
+  {
+    "student_code": "S2026001",
+    "name": "张小明",
+    "gender": "男",
+    "grade": "初三",
+    "school": "沈阳市实验中学",
+    "city": "沈阳",
+    "category": "物理类",
+    "total_score": 720.5,
+    "ranking": 150,
+    "chinese_score": 105.0,
+    "math_score": 118.0,
+    "english_score": 115.0,
+    "other_scores": {
+      "物理": 95,
+      "化学": 92,
+      "道德与法治": 95
+    },
+    "interests": ["编程", "机器人", "数学"],
+    "specialities": ["信息学竞赛省二", "机器人竞赛市一"],
+    "awards": [
+      {"name": "NOIP 普及组省二等奖", "year": 2025},
+      {"name": "沈阳市机器人竞赛一等奖", "year": 2025}
+    ],
+    "family_budget": 100000.0,
+    "preferred_locations": ["北京", "上海", "辽宁"],
+    "constraints": {
+      "经济": "中等",
+      "时间": "充足"
+    },
+    "planning_status": "未开始"
+  },
+  {
+    "student_code": "S2026002",
+    "name": "李雨涵",
+    "gender": "女",
+    "grade": "高一",
+    "school": "大连市第二十四中学",
+    "city": "大连",
+    "category": "历史类",
+    "total_score": 680.0,
+    "ranking": 300,
+    "chinese_score": 120.0,
+    "math_score": 105.0,
+    "english_score": 125.0,
+    "other_scores": {
+      "历史": 90,
+      "政治": 88,
+      "地理": 92
+    },
+    "interests": ["文学", "历史", "外语"],
+    "specialities": ["英语竞赛市一", "作文比赛省三"],
+    "awards": [
+      {"name": "全国中学生英语能力竞赛市一等奖", "year": 2025},
+      {"name": "辽宁省作文比赛三等奖", "year": 2024}
+    ],
+    "family_budget": 150000.0,
+    "preferred_locations": ["北京", "上海", "江苏"],
+    "constraints": {
+      "经济": "充足",
+      "时间": "充足"
+    },
+    "planning_status": "未开始"
+  }
+]

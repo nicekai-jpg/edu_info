@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "清华大学",
+    "code": "10003",
+    "location": "北京",
+    "type": "综合",
+    "is_985": true,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": "A 类"
+  },
+  {
+    "id": 2,
+    "name": "北京大学",
+    "code": "10001",
+    "location": "北京",
+    "type": "综合",
+    "is_985": true,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": "A 类"
+  },
+  {
+    "id": 3,
+    "name": "东北大学",
+    "code": "10145",
+    "location": "辽宁沈阳",
+    "type": "理工",
+    "is_985": true,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": "B 类"
+  },
+  {
+    "id": 4,
+    "name": "大连理工大学",
+    "code": "10141",
+    "location": "辽宁大连",
+    "type": "理工",
+    "is_985": true,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": "A 类"
+  },
+  {
+    "id": 5,
+    "name": "辽宁大学",
+    "code": "10140",
+    "location": "辽宁沈阳",
+    "type": "综合",
+    "is_985": false,
+    "is_211": true,
+    "is_double_first_class": true,
+    "project_type": null
+  }
+]

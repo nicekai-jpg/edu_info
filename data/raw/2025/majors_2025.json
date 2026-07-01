@@ -1,0 +1,1386 @@
+[
+  {
+    "id": 10003001,
+    "university_id": 10003,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10003002,
+    "university_id": 10003,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10003003,
+    "university_id": 10003,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10003004,
+    "university_id": 10003,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10003005,
+    "university_id": 10003,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10003006,
+    "university_id": 10003,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10001001,
+    "university_id": 10001,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10001002,
+    "university_id": 10001,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10001003,
+    "university_id": 10001,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10001004,
+    "university_id": 10001,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10001005,
+    "university_id": 10001,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10001006,
+    "university_id": 10001,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10246001,
+    "university_id": 10246,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10246002,
+    "university_id": 10246,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10246003,
+    "university_id": 10246,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10246004,
+    "university_id": 10246,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10246005,
+    "university_id": 10246,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10246006,
+    "university_id": 10246,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248001,
+    "university_id": 10248,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248002,
+    "university_id": 10248,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248003,
+    "university_id": 10248,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248004,
+    "university_id": 10248,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248005,
+    "university_id": 10248,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248006,
+    "university_id": 10248,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248007,
+    "university_id": 10248,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10248008,
+    "university_id": 10248,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335001,
+    "university_id": 10335,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335002,
+    "university_id": 10335,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335003,
+    "university_id": 10335,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335004,
+    "university_id": 10335,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335005,
+    "university_id": 10335,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335006,
+    "university_id": 10335,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335007,
+    "university_id": 10335,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10335008,
+    "university_id": 10335,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358001,
+    "university_id": 10358,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358002,
+    "university_id": 10358,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358003,
+    "university_id": 10358,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358004,
+    "university_id": 10358,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358005,
+    "university_id": 10358,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358006,
+    "university_id": 10358,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358007,
+    "university_id": 10358,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10358008,
+    "university_id": 10358,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10284001,
+    "university_id": 10284,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10284002,
+    "university_id": 10284,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10284003,
+    "university_id": 10284,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10284004,
+    "university_id": 10284,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10284005,
+    "university_id": 10284,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10284006,
+    "university_id": 10284,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10698001,
+    "university_id": 10698,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10698002,
+    "university_id": 10698,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10698003,
+    "university_id": 10698,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10698004,
+    "university_id": 10698,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10698005,
+    "university_id": 10698,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10698006,
+    "university_id": 10698,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10213001,
+    "university_id": 10213,
+    "name": "自动化",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10213002,
+    "university_id": 10213,
+    "name": "数据科学与大数据技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10213003,
+    "university_id": 10213,
+    "name": "机械工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10213004,
+    "university_id": 10213,
+    "name": "通信工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10213005,
+    "university_id": 10213,
+    "name": "电子信息工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10213006,
+    "university_id": 10213,
+    "name": "计算机科学与技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141001,
+    "university_id": 10141,
+    "name": "计算机科学与技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141002,
+    "university_id": 10141,
+    "name": "软件工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141003,
+    "university_id": 10141,
+    "name": "通信工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141004,
+    "university_id": 10141,
+    "name": "数据科学与大数据技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141005,
+    "university_id": 10141,
+    "name": "机械工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141006,
+    "university_id": 10141,
+    "name": "自动化",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10141007,
+    "university_id": 10141,
+    "name": "人工智能",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145001,
+    "university_id": 10145,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145002,
+    "university_id": 10145,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145003,
+    "university_id": 10145,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145004,
+    "university_id": 10145,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145005,
+    "university_id": 10145,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145006,
+    "university_id": 10145,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145007,
+    "university_id": 10145,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10145008,
+    "university_id": 10145,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10140001,
+    "university_id": 10140,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10140002,
+    "university_id": 10140,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10140003,
+    "university_id": 10140,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10140004,
+    "university_id": 10140,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10140005,
+    "university_id": 10140,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10140006,
+    "university_id": 10140,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10151001,
+    "university_id": 10151,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10151002,
+    "university_id": 10151,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10151003,
+    "university_id": 10151,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10151004,
+    "university_id": 10151,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10151005,
+    "university_id": 10151,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10151006,
+    "university_id": 10151,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002001,
+    "university_id": 10002,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002002,
+    "university_id": 10002,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002003,
+    "university_id": 10002,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002004,
+    "university_id": 10002,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002005,
+    "university_id": 10002,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002006,
+    "university_id": 10002,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002007,
+    "university_id": 10002,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10002008,
+    "university_id": 10002,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10006001,
+    "university_id": 10006,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10006002,
+    "university_id": 10006,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10006003,
+    "university_id": 10006,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10006004,
+    "university_id": 10006,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10006005,
+    "university_id": 10006,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10007001,
+    "university_id": 10007,
+    "name": "人工智能",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10007002,
+    "university_id": 10007,
+    "name": "数据科学与大数据技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10007003,
+    "university_id": 10007,
+    "name": "通信工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10007004,
+    "university_id": 10007,
+    "name": "计算机科学与技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10007005,
+    "university_id": 10007,
+    "name": "软件工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10027001,
+    "university_id": 10027,
+    "name": "汉语言文学（师范）",
+    "code": null,
+    "category": "文史",
+    "degree": "本科"
+  },
+  {
+    "id": 10027002,
+    "university_id": 10027,
+    "name": "化学（师范）",
+    "code": null,
+    "category": "文史",
+    "degree": "本科"
+  },
+  {
+    "id": 10027003,
+    "university_id": 10027,
+    "name": "数学与应用数学（师范）",
+    "code": null,
+    "category": "文史",
+    "degree": "本科"
+  },
+  {
+    "id": 10027004,
+    "university_id": 10027,
+    "name": "英语（师范）",
+    "code": null,
+    "category": "文史",
+    "degree": "本科"
+  },
+  {
+    "id": 10027005,
+    "university_id": 10027,
+    "name": "教育学",
+    "code": null,
+    "category": "文史",
+    "degree": "本科"
+  },
+  {
+    "id": 10013001,
+    "university_id": 10013,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10013002,
+    "university_id": 10013,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10013003,
+    "university_id": 10013,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10013004,
+    "university_id": 10013,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10013005,
+    "university_id": 10013,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008001,
+    "university_id": 10008,
+    "name": "数据科学与大数据技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008002,
+    "university_id": 10008,
+    "name": "自动化",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008003,
+    "university_id": 10008,
+    "name": "人工智能",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008004,
+    "university_id": 10008,
+    "name": "机械工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008005,
+    "university_id": 10008,
+    "name": "计算机科学与技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008006,
+    "university_id": 10008,
+    "name": "电子信息工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10008007,
+    "university_id": 10008,
+    "name": "通信工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10486001,
+    "university_id": 10486,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10486002,
+    "university_id": 10486,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10486003,
+    "university_id": 10486,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10486004,
+    "university_id": 10486,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10486005,
+    "university_id": 10486,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487001,
+    "university_id": 10487,
+    "name": "通信工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487002,
+    "university_id": 10487,
+    "name": "软件工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487003,
+    "university_id": 10487,
+    "name": "自动化",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487004,
+    "university_id": 10487,
+    "name": "机械工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487005,
+    "university_id": 10487,
+    "name": "人工智能",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487006,
+    "university_id": 10487,
+    "name": "数据科学与大数据技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10487007,
+    "university_id": 10487,
+    "name": "电子信息工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558001,
+    "university_id": 10558,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558002,
+    "university_id": 10558,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558003,
+    "university_id": 10558,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558004,
+    "university_id": 10558,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558005,
+    "university_id": 10558,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558006,
+    "university_id": 10558,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558007,
+    "university_id": 10558,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10558008,
+    "university_id": 10558,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10384001,
+    "university_id": 10384,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10384002,
+    "university_id": 10384,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10384003,
+    "university_id": 10384,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10384004,
+    "university_id": 10384,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10384005,
+    "university_id": 10384,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610001,
+    "university_id": 10610,
+    "name": "化学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610002,
+    "university_id": 10610,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610003,
+    "university_id": 10610,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610004,
+    "university_id": 10610,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610005,
+    "university_id": 10610,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610006,
+    "university_id": 10610,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610007,
+    "university_id": 10610,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10610008,
+    "university_id": 10610,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10614001,
+    "university_id": 10614,
+    "name": "人工智能",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10614002,
+    "university_id": 10614,
+    "name": "软件工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10614003,
+    "university_id": 10614,
+    "name": "自动化",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10614004,
+    "university_id": 10614,
+    "name": "通信工程",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10614005,
+    "university_id": 10614,
+    "name": "计算机科学与技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10614006,
+    "university_id": 10614,
+    "name": "数据科学与大数据技术",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10056001,
+    "university_id": 10056,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10056002,
+    "university_id": 10056,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10056003,
+    "university_id": 10056,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10056004,
+    "university_id": 10056,
+    "name": "数学与应用数学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10056005,
+    "university_id": 10056,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055001,
+    "university_id": 10055,
+    "name": "经济学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055002,
+    "university_id": 10055,
+    "name": "工商管理",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055003,
+    "university_id": 10055,
+    "name": "物理学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055004,
+    "university_id": 10055,
+    "name": "法学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055005,
+    "university_id": 10055,
+    "name": "汉语言文学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055006,
+    "university_id": 10055,
+    "name": "金融学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  },
+  {
+    "id": 10055007,
+    "university_id": 10055,
+    "name": "生物科学",
+    "code": null,
+    "category": "理工",
+    "degree": "本科"
+  }
+]

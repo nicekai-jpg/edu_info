@@ -1,0 +1,1100 @@
+[
+  {
+    "id": null,
+    "route_id": "gaokao_985 高校_计算机类",
+    "route_name": "985 高校 - 计算机类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入985 高校的计算机类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "计算机类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 50.0,
+    "difficulty": "高",
+    "success_rate": "10-15%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_985 高校_电子信息类",
+    "route_name": "985 高校 - 电子信息类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入985 高校的电子信息类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "电子信息类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 50.0,
+    "difficulty": "高",
+    "success_rate": "10-15%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_985 高校_机械类",
+    "route_name": "985 高校 - 机械类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入985 高校的机械类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "机械类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 50.0,
+    "difficulty": "高",
+    "success_rate": "10-15%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_985 高校_自动化类",
+    "route_name": "985 高校 - 自动化类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入985 高校的自动化类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "自动化类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 50.0,
+    "difficulty": "高",
+    "success_rate": "10-15%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_985 高校_医学类",
+    "route_name": "985 高校 - 医学类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入985 高校的医学类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "医学类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 50.0,
+    "difficulty": "高",
+    "success_rate": "10-15%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_985 高校_经济类",
+    "route_name": "985 高校 - 经济类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入985 高校的经济类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "经济类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 50.0,
+    "difficulty": "高",
+    "success_rate": "10-15%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_211 高校_计算机类",
+    "route_name": "211 高校 - 计算机类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入211 高校的计算机类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "计算机类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 40.0,
+    "difficulty": "中等",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_211 高校_电子信息类",
+    "route_name": "211 高校 - 电子信息类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入211 高校的电子信息类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "电子信息类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 40.0,
+    "difficulty": "中等",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_211 高校_机械类",
+    "route_name": "211 高校 - 机械类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入211 高校的机械类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "机械类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 40.0,
+    "difficulty": "中等",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_211 高校_自动化类",
+    "route_name": "211 高校 - 自动化类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入211 高校的自动化类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "自动化类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 40.0,
+    "difficulty": "中等",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_211 高校_医学类",
+    "route_name": "211 高校 - 医学类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入211 高校的医学类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "医学类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 40.0,
+    "difficulty": "中等",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_211 高校_经济类",
+    "route_name": "211 高校 - 经济类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入211 高校的经济类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "经济类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 40.0,
+    "difficulty": "中等",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_双一流_计算机类",
+    "route_name": "双一流 - 计算机类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入双一流的计算机类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "双一流",
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "计算机类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 35.0,
+    "difficulty": "中等",
+    "success_rate": "30-40%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_双一流_电子信息类",
+    "route_name": "双一流 - 电子信息类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入双一流的电子信息类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "双一流",
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "电子信息类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 35.0,
+    "difficulty": "中等",
+    "success_rate": "30-40%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_双一流_机械类",
+    "route_name": "双一流 - 机械类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入双一流的机械类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "双一流",
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "机械类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 35.0,
+    "difficulty": "中等",
+    "success_rate": "30-40%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_双一流_自动化类",
+    "route_name": "双一流 - 自动化类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入双一流的自动化类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "双一流",
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "自动化类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 35.0,
+    "difficulty": "中等",
+    "success_rate": "30-40%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_双一流_医学类",
+    "route_name": "双一流 - 医学类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入双一流的医学类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "双一流",
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "医学类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 35.0,
+    "difficulty": "中等",
+    "success_rate": "30-40%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_双一流_经济类",
+    "route_name": "双一流 - 经济类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入双一流的经济类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "双一流",
+      "211",
+      "985"
+    ],
+    "target_major_types": [
+      "经济类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 35.0,
+    "difficulty": "中等",
+    "success_rate": "30-40%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_普通本科_计算机类",
+    "route_name": "普通本科 - 计算机类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入普通本科的计算机类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "普通"
+    ],
+    "target_major_types": [
+      "计算机类"
+    ],
+    "cost_min": 5.0,
+    "cost_max": 20.0,
+    "difficulty": "低",
+    "success_rate": "60-80%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_普通本科_电子信息类",
+    "route_name": "普通本科 - 电子信息类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入普通本科的电子信息类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "普通"
+    ],
+    "target_major_types": [
+      "电子信息类"
+    ],
+    "cost_min": 5.0,
+    "cost_max": 20.0,
+    "difficulty": "低",
+    "success_rate": "60-80%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_普通本科_机械类",
+    "route_name": "普通本科 - 机械类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入普通本科的机械类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "普通"
+    ],
+    "target_major_types": [
+      "机械类"
+    ],
+    "cost_min": 5.0,
+    "cost_max": 20.0,
+    "difficulty": "低",
+    "success_rate": "60-80%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_普通本科_自动化类",
+    "route_name": "普通本科 - 自动化类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入普通本科的自动化类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "普通"
+    ],
+    "target_major_types": [
+      "自动化类"
+    ],
+    "cost_min": 5.0,
+    "cost_max": 20.0,
+    "difficulty": "低",
+    "success_rate": "60-80%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_普通本科_医学类",
+    "route_name": "普通本科 - 医学类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入普通本科的医学类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "普通"
+    ],
+    "target_major_types": [
+      "医学类"
+    ],
+    "cost_min": 5.0,
+    "cost_max": 20.0,
+    "difficulty": "低",
+    "success_rate": "60-80%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "gaokao_普通本科_经济类",
+    "route_name": "普通本科 - 经济类",
+    "route_type": "普通高考",
+    "category": "普通高考",
+    "description": "通过普通高考考入普通本科的经济类专业",
+    "stages": null,
+    "requirements": null,
+    "timeline": null,
+    "target_university_types": [
+      "普通"
+    ],
+    "target_major_types": [
+      "经济类"
+    ],
+    "cost_min": 5.0,
+    "cost_max": 20.0,
+    "difficulty": "低",
+    "success_rate": "60-80%",
+    "related_policies": [
+      "普通高考招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "qiangji_数学",
+    "route_name": "强基计划 - 数学",
+    "route_type": "强基计划",
+    "category": "拔尖人才",
+    "description": "通过强基计划考入数学专业，本硕博贯通培养",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 5%",
+      "学科特长": "数学竞赛省级以上奖项",
+      "综合素质": "优秀"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "数学"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 50.0,
+    "difficulty": "极高",
+    "success_rate": "5-10%",
+    "related_policies": [
+      "强基计划招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "qiangji_物理",
+    "route_name": "强基计划 - 物理",
+    "route_type": "强基计划",
+    "category": "拔尖人才",
+    "description": "通过强基计划考入物理专业，本硕博贯通培养",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 5%",
+      "学科特长": "物理竞赛省级以上奖项",
+      "综合素质": "优秀"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "物理"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 50.0,
+    "difficulty": "极高",
+    "success_rate": "5-10%",
+    "related_policies": [
+      "强基计划招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "qiangji_化学",
+    "route_name": "强基计划 - 化学",
+    "route_type": "强基计划",
+    "category": "拔尖人才",
+    "description": "通过强基计划考入化学专业，本硕博贯通培养",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 5%",
+      "学科特长": "化学竞赛省级以上奖项",
+      "综合素质": "优秀"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "化学"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 50.0,
+    "difficulty": "极高",
+    "success_rate": "5-10%",
+    "related_policies": [
+      "强基计划招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "qiangji_生物",
+    "route_name": "强基计划 - 生物",
+    "route_type": "强基计划",
+    "category": "拔尖人才",
+    "description": "通过强基计划考入生物专业，本硕博贯通培养",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 5%",
+      "学科特长": "生物竞赛省级以上奖项",
+      "综合素质": "优秀"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "生物"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 50.0,
+    "difficulty": "极高",
+    "success_rate": "5-10%",
+    "related_policies": [
+      "强基计划招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "qiangji_历史",
+    "route_name": "强基计划 - 历史",
+    "route_type": "强基计划",
+    "category": "拔尖人才",
+    "description": "通过强基计划考入历史专业，本硕博贯通培养",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 5%",
+      "学科特长": "历史竞赛省级以上奖项",
+      "综合素质": "优秀"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "历史"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 50.0,
+    "difficulty": "极高",
+    "success_rate": "5-10%",
+    "related_policies": [
+      "强基计划招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "qiangji_哲学",
+    "route_name": "强基计划 - 哲学",
+    "route_type": "强基计划",
+    "category": "拔尖人才",
+    "description": "通过强基计划考入哲学专业，本硕博贯通培养",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 5%",
+      "学科特长": "哲学竞赛省级以上奖项",
+      "综合素质": "优秀"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985"
+    ],
+    "target_major_types": [
+      "哲学"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 50.0,
+    "difficulty": "极高",
+    "success_rate": "5-10%",
+    "related_policies": [
+      "强基计划招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "keji_信息学",
+    "route_name": "科技特长生 - 信息学",
+    "route_type": "科技特长生",
+    "category": "特长生",
+    "description": "通过信息学特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "竞赛要求": "NOIP/NOI 竞赛省级以上奖项",
+      "成绩要求": "年级前 20%",
+      "准备时间": "2-3 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985",
+      "211"
+    ],
+    "target_major_types": [
+      "计算机类",
+      "电子信息类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 80.0,
+    "difficulty": "高",
+    "success_rate": "10-20%",
+    "related_policies": [
+      "科技特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "keji_机器人",
+    "route_name": "科技特长生 - 机器人",
+    "route_type": "科技特长生",
+    "category": "特长生",
+    "description": "通过机器人特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "竞赛要求": "机器人竞赛省级以上奖项",
+      "成绩要求": "年级前 20%",
+      "准备时间": "2-3 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985",
+      "211"
+    ],
+    "target_major_types": [
+      "自动化类",
+      "机械类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 80.0,
+    "difficulty": "高",
+    "success_rate": "10-20%",
+    "related_policies": [
+      "科技特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "keji_科创",
+    "route_name": "科技特长生 - 科创",
+    "route_type": "科技特长生",
+    "category": "特长生",
+    "description": "通过科创特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "竞赛要求": "科技创新大赛省级以上奖项",
+      "成绩要求": "年级前 20%",
+      "准备时间": "2-3 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985",
+      "211"
+    ],
+    "target_major_types": [
+      "电子信息类",
+      "计算机类"
+    ],
+    "cost_min": 30.0,
+    "cost_max": 80.0,
+    "difficulty": "高",
+    "success_rate": "10-20%",
+    "related_policies": [
+      "科技特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "yishu_音乐",
+    "route_name": "艺术特长生 - 音乐",
+    "route_type": "艺术特长生",
+    "category": "特长生",
+    "description": "通过音乐特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "音乐专业水平测试优秀",
+      "成绩要求": "达到艺术类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "音乐类"
+    ],
+    "cost_min": 50.0,
+    "cost_max": 150.0,
+    "difficulty": "高",
+    "success_rate": "15-25%",
+    "related_policies": [
+      "艺术特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "yishu_美术",
+    "route_name": "艺术特长生 - 美术",
+    "route_type": "艺术特长生",
+    "category": "特长生",
+    "description": "通过美术特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "美术专业水平测试优秀",
+      "成绩要求": "达到艺术类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "美术类"
+    ],
+    "cost_min": 50.0,
+    "cost_max": 150.0,
+    "difficulty": "高",
+    "success_rate": "15-25%",
+    "related_policies": [
+      "艺术特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "yishu_舞蹈",
+    "route_name": "艺术特长生 - 舞蹈",
+    "route_type": "艺术特长生",
+    "category": "特长生",
+    "description": "通过舞蹈特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "舞蹈专业水平测试优秀",
+      "成绩要求": "达到艺术类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "舞蹈类"
+    ],
+    "cost_min": 50.0,
+    "cost_max": 150.0,
+    "difficulty": "高",
+    "success_rate": "15-25%",
+    "related_policies": [
+      "艺术特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "yishu_传媒",
+    "route_name": "艺术特长生 - 传媒",
+    "route_type": "艺术特长生",
+    "category": "特长生",
+    "description": "通过传媒特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "传媒专业水平测试优秀",
+      "成绩要求": "达到艺术类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "传媒类"
+    ],
+    "cost_min": 50.0,
+    "cost_max": 150.0,
+    "difficulty": "高",
+    "success_rate": "15-25%",
+    "related_policies": [
+      "艺术特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "tiyu_田径",
+    "route_name": "体育特长生 - 田径",
+    "route_type": "体育特长生",
+    "category": "特长生",
+    "description": "通过田径特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "田径国家二级运动员以上",
+      "成绩要求": "达到体育类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "体育类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 60.0,
+    "difficulty": "高",
+    "success_rate": "10-20%",
+    "related_policies": [
+      "体育特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "tiyu_球类",
+    "route_name": "体育特长生 - 球类",
+    "route_type": "体育特长生",
+    "category": "特长生",
+    "description": "通过球类特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "球类国家二级运动员以上",
+      "成绩要求": "达到体育类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "体育类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 60.0,
+    "difficulty": "高",
+    "success_rate": "10-20%",
+    "related_policies": [
+      "体育特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "tiyu_游泳",
+    "route_name": "体育特长生 - 游泳",
+    "route_type": "体育特长生",
+    "category": "特长生",
+    "description": "通过游泳特长生降分录取",
+    "stages": null,
+    "requirements": {
+      "专业要求": "游泳国家二级运动员以上",
+      "成绩要求": "达到体育类分数线",
+      "准备时间": "5-10 年"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "211",
+      "双一流",
+      "普通"
+    ],
+    "target_major_types": [
+      "体育类"
+    ],
+    "cost_min": 20.0,
+    "cost_max": 60.0,
+    "difficulty": "高",
+    "success_rate": "10-20%",
+    "related_policies": [
+      "体育特长生招生政策"
+    ]
+  },
+  {
+    "id": null,
+    "route_id": "zongping_comprehensive",
+    "route_name": "综合评价招生",
+    "route_type": "综合评价",
+    "category": "多元升学",
+    "description": "通过综合素质评价和高校考核录取",
+    "stages": null,
+    "requirements": {
+      "成绩要求": "年级前 15%",
+      "综合素质": "优秀",
+      "面试表现": "良好以上"
+    },
+    "timeline": null,
+    "target_university_types": [
+      "985",
+      "211"
+    ],
+    "target_major_types": [
+      "计算机类",
+      "电子信息类",
+      "机械类",
+      "自动化类",
+      "医学类",
+      "经济类",
+      "法学类",
+      "文学类"
+    ],
+    "cost_min": 15.0,
+    "cost_max": 40.0,
+    "difficulty": "高",
+    "success_rate": "20-30%",
+    "related_policies": [
+      "综合评价招生政策"
+    ]
+  }
+]
