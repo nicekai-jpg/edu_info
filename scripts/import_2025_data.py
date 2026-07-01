@@ -67,7 +67,7 @@ def import_majors(conn: duckdb.DuckDBPyConnection, majors: list[dict]):
     count = 0
     for major in majors:
         uni_code = major["university_id"]  # 爬虫中使用的是代码
-        uni_id = code_to_id.get(uni_code)
+        uni_id = code_to_id.get(str(uni_code))
 
         if not uni_id:
             logger.debug(f"跳过专业 {major['name']} - 高校不存在：{uni_code}")
@@ -98,6 +98,9 @@ def import_scores(conn: duckdb.DuckDBPyConnection, scores: list[dict]):
     """导入录取分数数据"""
     logger.info(f"导入 {len(scores)} 条录取分数...")
 
+    # 确保序列存在
+    conn.execute("CREATE SEQUENCE IF NOT EXISTS scores_id_seq;")
+
     # 准备数据
     data = []
     for score in scores:
@@ -114,10 +117,10 @@ def import_scores(conn: duckdb.DuckDBPyConnection, scores: list[dict]):
 
     # 插入数据库
     conn.executemany("""
-        INSERT OR REPLACE INTO admission_scores (
-            university_id, major_id, year, province, category,
+        INSERT OR IGNORE INTO admission_scores (
+            id, university_id, major_id, year, province, category,
             min_score, min_rank, batch
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (nextval('scores_id_seq'), ?, ?, ?, ?, ?, ?, ?, ?)
     """, data)
 
     logger.info("✅ 录取分数导入成功")

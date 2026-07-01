@@ -1,0 +1,51 @@
+name: Generate Student Reports
+
+on:
+  push:
+    paths:
+      - 'data/input_students.json'
+  workflow_dispatch:
+
+jobs:
+  build-reports:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: 'latest'
+
+      - name: Install dependencies
+        run: |
+          uv sync --frozen
+
+      - name: Run Report Generator
+        run: |
+          # 运行报告生成器（脚本会自动在 GHA 临时初始化并导入 2025 年官方分数）
+          uv run python scripts/generate_reports.py
+
+      - name: Commit and Push Generated Reports
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 暂存生成的报告目录
+          git add output/reports/
+          
+          # 检查是否有报告文件更新
+          if git diff --staged --quiet; then
+            echo "没有检测到新生成的报告，跳过推送。"
+          else
+            echo "检测到报告更新，正在提交并推送到 GitHub 仓库..."
+            git commit -m "docs: 自动更新学生升学规划报告 [skip ci]"
+            git push origin main
+          fi

@@ -438,10 +438,13 @@ class FeasibilityAssessor:
             综合建议文本
         """
         # 计算平均成功率
-        avg_route_prob = sum(a["success_probability"] for a in route_assessments) / len(route_assessments)
-        avg_target_prob = sum(a["probability"] for a in target_assessments) / len(target_assessments)
+        avg_route_prob = sum(a["success_probability"] for a in route_assessments) / len(route_assessments) if route_assessments else 0.0
+        avg_target_prob = sum(a["probability"] for a in target_assessments) / len(target_assessments) if target_assessments else 0.0
 
-        overall_prob = (avg_route_prob + avg_target_prob) / 2
+        if route_assessments and target_assessments:
+            overall_prob = (avg_route_prob + avg_target_prob) / 2
+        else:
+            overall_prob = avg_route_prob or avg_target_prob or 0.0
 
         if overall_prob >= 70:
             return "整体可行性较高，建议按照规划方案执行，保持当前学习状态"

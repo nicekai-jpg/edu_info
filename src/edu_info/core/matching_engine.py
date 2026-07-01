@@ -173,13 +173,18 @@ class MatchingEngine:
             score_ratio = student.total_score / 750.0
             base_score = 40.0 + score_ratio * 60.0  # 40-100 分
 
-        # 根据路线难度调整
-        difficulty_modifier = {
-            "低": 1.2,
-            "中等": 1.0,
-            "高": 0.9,
-            "极高": 0.8,
-        }
+        # 根据路线难度和学生的分数进行动态匹配度调整
+        if student.total_score:
+            if student.total_score >= 630:  # 适合 985/极高/高难度
+                difficulty_modifier = {"极高": 1.2, "高": 1.2, "中等": 0.9, "低": 0.6}
+            elif student.total_score >= 560:  # 适合 211/中高难度
+                difficulty_modifier = {"极高": 0.8, "高": 1.2, "中等": 1.1, "低": 0.8}
+            elif student.total_score >= 450:  # 适合双一流/普通本科
+                difficulty_modifier = {"极高": 0.6, "高": 0.8, "中等": 1.2, "低": 1.1}
+            else:
+                difficulty_modifier = {"极高": 0.4, "高": 0.6, "中等": 0.8, "低": 1.2}
+        else:
+            difficulty_modifier = {"极高": 0.8, "高": 0.9, "中等": 1.0, "低": 1.2}
 
         modifier = difficulty_modifier.get(route.difficulty, 1.0)
 

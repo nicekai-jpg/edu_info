@@ -1,0 +1,24 @@
+[
+  {
+    "name": "张小明",
+    "grade": "高三",
+    "city": "沈阳",
+    "category": "物理类",
+    "total_score": 685.0,
+    "ranking": 1000,
+    "interests": ["计算机", "人工智能"],
+    "family_budget": 10.0,
+    "preferred_locations": ["北京", "辽宁"]
+  },
+  {
+    "name": "李美华",
+    "grade": "高三",
+    "city": "大连",
+    "category": "历史类",
+    "total_score": 680.0,
+    "ranking": 1200,
+    "interests": ["法学", "金融学"],
+    "family_budget": 15.0,
+    "preferred_locations": ["上海", "江苏"]
+  }
+]
