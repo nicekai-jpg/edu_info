@@ -121,9 +121,11 @@ class TestMatchingEngine:
             # 能力匹配度应该在合理范围内
             assert 0 <= match.ability_score <= 100
 
-            # 高难度路线的能力匹配度应该较低
-            if match.route.difficulty == "极高":
-                assert match.ability_score < 80
+            # 对于高分学生 (680分)，高难度/极高难度赛道的能力匹配度应该较高
+            if match.route.difficulty in ["极高", "高"]:
+                assert match.ability_score >= 80
+            elif match.route.difficulty == "低":
+                assert match.ability_score < 70
 
     def test_economic_matching(self, engine, sample_student, sample_routes):
         """测试经济匹配"""

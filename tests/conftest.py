@@ -15,21 +15,7 @@ def test_data_dir():
     return Path(__file__).parent / "data"
 
 
-@pytest.fixture
-def temp_db():
-    """创建临时数据库用于测试"""
-    import duckdb
 
-    # 创建临时文件路径（不预先创建文件）
-    db_path = tempfile.mktemp(suffix=".duckdb")
-
-    # 直接连接到新数据库
-    conn = duckdb.connect(db_path)
-    yield conn
-    conn.close()
-
-    # 清理临时文件
-    Path(db_path).unlink(missing_ok=True)
 
 
 @pytest.fixture
