@@ -61,6 +61,9 @@ class Student(BaseModel):
     specialities: list[str] | None = None
     awards: list[dict[str, Any]] | None = None
 
+    # 选考科目组合
+    subjects: list[str] | None = None
+
     # 家庭情况
     family_budget: float | None = None
     preferred_locations: list[str] | None = None

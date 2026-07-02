@@ -87,15 +87,21 @@ class PlanningEngine:
         low_targets = []
 
         if universities and score_data:
-            # 使用 Top 1 路线生成目标
-            best_route = top_routes[0]
-            high, medium, low = self.target_generator.generate_targets(
-                student, best_route.route, universities, score_data
-            )
-            high_targets = high
-            medium_targets = medium
-            low_targets = low
-            logger.info(f"生成目标：高={len(high)}, 中={len(medium)}, 低={len(low)}")
+            # 依次尝试匹配排名前列的路线，直到生成出非空的目标高校为止（避开选科冲突等过滤）
+            for idx, route_match in enumerate(top_routes):
+                high, medium, low = self.target_generator.generate_targets(
+                    student, route_match.route, universities, score_data
+                )
+                if high or medium or low:
+                    high_targets = high
+                    medium_targets = medium
+                    low_targets = low
+                    # 动态将该非冲突路线调整为最佳推荐路线
+                    if idx > 0:
+                        logger.info(f"由于首选路线存在选科等冲突，自动切换并推荐次优路线：{route_match.route.route_name}")
+                        top_routes.insert(0, top_routes.pop(idx))
+                    break
+            logger.info(f"最终生成目标数量：高={len(high_targets)}, 中={len(medium_targets)}, 低={len(low_targets)}")
 
         # 5. 可行性评估
         feasibility_report = self.feasibility_assessor.generate_feasibility_report(

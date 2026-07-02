@@ -151,12 +151,28 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
     best_match = result.top_routes[0] if result.top_routes else None
     best_route_name = best_match.route.route_name if best_match else "普通高考"
     
+    subjects_str = "、".join(student.subjects) if student.subjects else "物理、化学、生物（默认标准理科组合）" if student.category == "物理类" else "历史、政治、地理（默认标准文科组合）"
+    
+    # 选科冲突警告
+    targets_empty_warning = ""
+    if not result.high_targets and not result.medium_targets and not result.low_targets:
+        from edu_info.core.subject_validator import SubjectValidator
+        req_primary, req_secondaries = SubjectValidator.get_required_subjects(best_route_name, student.category)
+        if "化学" in req_secondaries and (not student.subjects or "化学" not in student.subjects):
+            targets_empty_warning = f"""> [!WARNING]
+> **重要提示（选科红线预警）：**
+> 您偏好的专业方向 **{best_route_name}**（如计算机类、电子信息类等理工农医类专业）要求首选物理且**再选科目必须包含 [化学]**。
+> 您的选考组合为 **{subjects_str}**，因**缺少 [化学]** 导致无法投档报考此类专业。
+> **建议行动**：建议修改学业兴趣，避开需要物理和化学的理工农医专业，或者调整升学规划路线（如选择数学类、金融学、管理科学等不限化学的专业）。
+\n"""
+
     report = f"""# 🧑‍🎓 {student.name} 同学升学规划方案报告
 
 ## 📌 1. 学生基本档案 (Student Profile)
 - **姓名**：{student.name}
 - **年级**：{student.grade}
 - **高考科类**：{student.category}
+- **选考科目组合**：{subjects_str}
 - **生源地**：辽宁省{student.city or '未指定'}
 - **高考估分/成绩**：{student.total_score or '未输入'} 分 (预估省位次：第 {student.ranking or '未指定'} 名)
 - **家庭预算限制**：{student.family_budget or '不限'} 万元/年
@@ -182,7 +198,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
 ## 🏫 3. 2025 年高校录取“冲稳保”推荐 (Target Universities)
 根据 **{best_route_name}** 赛道，结合 2025 年辽宁省招生录取分数线，为您推荐以下三档目标高校：
 
-### 🔥 3.1 冲刺目标 (Reach Universities) - 建议填报在第一志愿序列 (录取概率 30% - 50%)
+{targets_empty_warning}### 🔥 3.1 冲刺目标 (Reach Universities) - 建议填报在第一志愿序列 (录取概率 30% - 50%)
 """
     if result.high_targets:
         for i, target in enumerate(result.high_targets, 1):
@@ -290,6 +306,7 @@ def main():
             interests=s_data.get("interests", []),
             family_budget=s_data.get("family_budget", 10.0),
             preferred_locations=s_data.get("preferred_locations", []),
+            subjects=s_data.get("subjects", []),
         )
         
         # 运行规划计算

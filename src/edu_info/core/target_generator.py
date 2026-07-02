@@ -93,11 +93,21 @@ class TargetGenerator:
             # 确定目标档次
             target_type = self._determine_target_type(probability)
 
+            major = self._suggest_major(student, route)
+
+            # 校验高考选科条件限制
+            from edu_info.core.subject_validator import SubjectValidator
+            student_subjects = getattr(student, "subjects", None)
+            is_eligible, reason = SubjectValidator.is_eligible(student_subjects, major, student.category)
+            if not is_eligible:
+                logger.info(f"【选科要求拦截】跳过高校 {university.name}：专业 {major} 选科冲突（{reason}）")
+                continue
+
             # 创建目标
             target = TargetUniversity(
                 university=university,
                 target_type=target_type,
-                major=self._suggest_major(student, route),
+                major=major,
                 min_score=score_range.min_score,
                 min_rank=score_range.min_rank,
                 year=2025,
