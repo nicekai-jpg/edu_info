@@ -331,7 +331,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
 
 def main():
     # 数据目录定义
-    data_dir = Path("data/raw/2025")
+    data_dir = Path("data/processed")
     
     # 纯内存直接读取 JSON，免去 DuckDB 初始化和 SQL 开销
     logger.info("⚡️ 正在以纯内存 JSON 直读模式加载高校和分数映射数据...")

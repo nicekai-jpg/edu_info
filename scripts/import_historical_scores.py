@@ -243,8 +243,9 @@ def main():
     logger.info(" 开始爬取与解析 2022 - 2025 历年官方投档数据...")
     logger.info("============================================================")
     
-    cache_dir = Path("data/raw/2025")
-    cache_dir.mkdir(parents=True, exist_ok=True)
+    raw_dir = Path("data/raw")
+    processed_dir = Path("data/processed")
+    processed_dir.mkdir(parents=True, exist_ok=True)
     
     universities = {}
     majors = {}
@@ -253,15 +254,17 @@ def main():
     # 循环读取历年配置
     for year_str, cfg in YEAR_CONFIGS.items():
         year = int(year_str)
+        year_raw_dir = raw_dir / str(year)
+        year_raw_dir.mkdir(parents=True, exist_ok=True)
         
         # 物理类
         phys_ext = ".zip" if "zip" in cfg["物理类"] else ".xlsx"
-        phys_dec = download_and_decrypt(cfg["物理类"], cache_dir / f"physics_{year}_raw{phys_ext}")
+        phys_dec = download_and_decrypt(cfg["物理类"], year_raw_dir / f"physics_{year}_raw{phys_ext}")
         parse_sheet(phys_dec, year, "物理类", universities, majors, scores)
         
         # 历史类
         hist_ext = ".zip" if "zip" in cfg["历史类"] else ".xlsx"
-        hist_dec = download_and_decrypt(cfg["历史类"], cache_dir / f"history_{year}_raw{hist_ext}")
+        hist_dec = download_and_decrypt(cfg["历史类"], year_raw_dir / f"history_{year}_raw{hist_ext}")
         parse_sheet(hist_dec, year, "历史类", universities, majors, scores)
         
     # 格式化输出
@@ -270,13 +273,13 @@ def main():
     score_list = sorted(scores, key=lambda x: (x["year"], x["university_id"], x["major_id"], x["category"]))
     
     logger.info("保存整合后的正式 JSON 文件...")
-    with open(cache_dir / "universities_2025.json", "w", encoding="utf-8") as f:
+    with open(processed_dir / "universities_2025.json", "w", encoding="utf-8") as f:
         json.dump(uni_list, f, ensure_ascii=False, indent=2)
         
-    with open(cache_dir / "majors_2025.json", "w", encoding="utf-8") as f:
+    with open(processed_dir / "majors_2025.json", "w", encoding="utf-8") as f:
         json.dump(major_list, f, ensure_ascii=False, indent=2)
         
-    with open(cache_dir / "scores_2025.json", "w", encoding="utf-8") as f:
+    with open(processed_dir / "scores_2025.json", "w", encoding="utf-8") as f:
         json.dump(score_list, f, ensure_ascii=False, indent=2)
         
     # 分年份汇总显示
