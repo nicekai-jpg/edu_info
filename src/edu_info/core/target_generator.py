@@ -22,6 +22,42 @@ class ScoreRange:
     max_rank: int
 
 
+def get_major_tuition(university: University, major_name: str) -> int:
+    """
+    依据具体专业名称，匹配高校细分专业收费标准。如果没有匹配，回退到学校默认的 tuition_fee。
+    """
+    if not university.major_tuition_fees:
+        return university.tuition_fee or 5500
+        
+    # 匹配中外合作
+    if "中外合作" in major_name or "联合培养" in major_name:
+        if "中外合作" in university.major_tuition_fees:
+            return university.major_tuition_fees["中外合作"]
+            
+    # 匹配艺术类
+    if any(x in major_name for x in ["音乐", "美术", "设计", "艺术", "舞蹈", "戏剧", "播音", "主持"]):
+        if "艺术类" in university.major_tuition_fees:
+            return university.major_tuition_fees["艺术类"]
+            
+    # 匹配软件工程高收费
+    if "软件工程" in major_name:
+        if "软件工程" in university.major_tuition_fees:
+            return university.major_tuition_fees["软件工程"]
+        if "软件工程(高年级)" in university.major_tuition_fees:
+            return university.major_tuition_fees["软件工程(高年级)"]
+            
+    # 匹配医学
+    if any(x in major_name for x in ["医学", "临床", "口腔", "药学", "护理"]):
+        if "医学类" in university.major_tuition_fees:
+            return university.major_tuition_fees["医学类"]
+            
+    # 按照文理工科回退
+    if any(x in major_name for x in ["理", "工", "计算机", "数学", "物理", "化学", "机械", "自动化", "电子"]):
+        return university.major_tuition_fees.get("普通工科") or university.major_tuition_fees.get("普通理科") or university.major_tuition_fees.get("普通专业") or university.tuition_fee or 5500
+    else:
+        return university.major_tuition_fees.get("普通文科") or university.major_tuition_fees.get("普通专业") or university.tuition_fee or 5500
+
+
 class TargetGenerator:
     """目标生成器"""
 
@@ -94,6 +130,14 @@ class TargetGenerator:
             target_type = self._determine_target_type(probability)
 
             major = self._suggest_major(student, route)
+
+            # 校验特定专业的学费预算限制
+            specific_tuition = get_major_tuition(university, major)
+            if student.family_budget is not None:
+                tuition_in_wan = specific_tuition / 10000.0
+                if tuition_in_wan > student.family_budget:
+                    logger.info(f"【家庭预算拦截】跳过高校 {university.name}：专业 {major}，特定收费 {specific_tuition}元/年，超过家庭上限 {student.family_budget}万元/年")
+                    continue
 
             # 校验高考选科条件限制
             from edu_info.core.subject_validator import SubjectValidator
@@ -175,12 +219,7 @@ class TargetGenerator:
                 if score_diff > 30:
                     continue
 
-            # 检查学费是否超出家庭年度预算限制（family_budget，单位为万元）
-            if student.family_budget is not None and university.tuition_fee is not None:
-                tuition_in_wan = university.tuition_fee / 10000.0
-                if tuition_in_wan > student.family_budget:
-                    logger.info(f"【家庭预算拦截】跳过高校 {university.name}：办学性质 {university.ownership}，学费 {university.tuition_fee}元/年，超过预算上限 {student.family_budget}万元/年")
-                    continue
+            # 学费预算限制校验移至 generate_targets 循环中进行具体专业级别比对
 
             filtered.append(university)
 

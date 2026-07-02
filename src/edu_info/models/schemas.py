@@ -24,6 +24,35 @@ class University(BaseModel):
     project_type: str | None = None
     ownership: str | None = None
     tuition_fee: int | None = None
+    
+    # 扩展：高校全维特征画像
+    english_name: str | None = None
+    website: str | None = None
+    ownership_type: str | None = None  # 办学性质详细类别
+    industry_tags: list[str] = []
+    city_level: str | None = None
+    
+    # 学科与学术实力评估
+    discipline_evaluations: dict[str, str] = {}
+    doctorate_points: int = 0
+    master_points: int = 0
+    national_key_disciplines: list[str] = []
+    
+    # 细分费用明细
+    accommodation_fee: int | None = None
+    major_tuition_fees: dict[str, int] = {}
+    avg_living_cost: int | None = None
+    
+    # 就业与深造走势
+    overall_employment_rate: float | None = None
+    postgraduate_rate: float | None = None
+    abroad_rate: float | None = None
+    key_employers: list[str] = []
+    
+    # 历史底蕴与背景
+    description: str | None = None
+    key_labs: list[str] = []
+    famous_alumni: list[str] = []
 
 
 class Major(BaseModel):

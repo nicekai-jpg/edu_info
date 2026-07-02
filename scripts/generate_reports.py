@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from edu_info.core.planning_engine import PlanningEngine
 from edu_info.core.target_generator import ScoreRange
-from edu_info.models.schemas import Student, University
+from edu_info.models.schemas import Student, University, TargetUniversity
 from edu_info.utils.logger import setup_logger
 
 logger = setup_logger("batch_report_generator")
@@ -41,7 +41,26 @@ def load_universities_from_json(data_dir: Path) -> list[University]:
             is_double_first_class=bool(u.get("is_double_first_class", False)),
             project_type=u.get("project_type"),
             ownership=u.get("ownership") or "公办",
-            tuition_fee=u.get("tuition_fee") or 5500
+            tuition_fee=u.get("tuition_fee") or 5500,
+            english_name=u.get("english_name"),
+            website=u.get("website"),
+            ownership_type=u.get("ownership_type") or u.get("ownership") or "公办",
+            industry_tags=u.get("industry_tags") or [],
+            city_level=u.get("city_level"),
+            discipline_evaluations=u.get("discipline_evaluations") or {},
+            doctorate_points=u.get("doctorate_points") or 0,
+            master_points=u.get("master_points") or 0,
+            national_key_disciplines=u.get("national_key_disciplines") or [],
+            accommodation_fee=u.get("accommodation_fee") or 1200,
+            major_tuition_fees=u.get("major_tuition_fees") or {},
+            avg_living_cost=u.get("avg_living_cost"),
+            overall_employment_rate=u.get("overall_employment_rate"),
+            postgraduate_rate=u.get("postgraduate_rate"),
+            abroad_rate=u.get("abroad_rate"),
+            key_employers=u.get("key_employers") or [],
+            description=u.get("description"),
+            key_labs=u.get("key_labs") or [],
+            famous_alumni=u.get("famous_alumni") or []
         ) for u in uni_data
     ]
 
@@ -145,6 +164,69 @@ def format_history_scores(target, scores_raw: list[dict], major_id_to_name: dict
         
     return "历年参考投档线：" + "；".join(parts)
 
+
+def format_target_university(i: int, target: TargetUniversity, scores_raw: list[dict], major_id_to_name: dict) -> str:
+    from edu_info.core.target_generator import get_major_tuition
+    
+    history_str = format_history_scores(target, scores_raw, major_id_to_name)
+    spec_tuition = get_major_tuition(target.university, target.major or "")
+    
+    # 构造学科实力与评级字符串
+    eval_grades = []
+    if target.university.discipline_evaluations:
+        for m_key, grade in target.university.discipline_evaluations.items():
+            if m_key in (target.major or "") or (target.major or "") in m_key:
+                eval_grades.append(f"{m_key}学科评估为 **[{grade}]**")
+    
+    academic_str = ""
+    if eval_grades:
+        academic_str += "、".join(eval_grades)
+    if target.university.doctorate_points:
+        academic_str += ("；" if academic_str else "") + f"拥有一级学科博士点 {target.university.doctorate_points} 个"
+    elif target.university.master_points:
+        academic_str += ("；" if academic_str else "") + f"拥有一级学科硕士点 {target.university.master_points} 个"
+        
+    # 就业与深造前景
+    employ_parts = []
+    if target.university.postgraduate_rate:
+        employ_parts.append(f"国内读研深造率 {target.university.postgraduate_rate:.1f}%")
+    if target.university.abroad_rate:
+        employ_parts.append(f"出国深造率 {target.university.abroad_rate:.1f}%")
+    if target.university.overall_employment_rate:
+        employ_parts.append(f"毕业生总体就业率 {target.university.overall_employment_rate:.1f}%")
+    employ_str = ", ".join(employ_parts) if employ_parts else "暂无官方就业质量报告数据"
+    
+    # 行业名片与背景底蕴
+    bg_parts = []
+    if target.university.industry_tags:
+        bg_parts.append(f"业内美誉：{'、'.join(target.university.industry_tags)}")
+    if target.university.key_labs:
+        bg_parts.append(f"重点实验室/国家平台：{'、'.join(target.university.key_labs)}")
+    if target.university.famous_alumni:
+        bg_parts.append(f"知名杰出校友：{'、'.join(target.university.famous_alumni)}")
+    bg_str = "; ".join(bg_parts)
+    
+    # 组合输出
+    out = f"{i}. **{target.university.name}** ({target.university.location})\n"
+    out += f"   - **推荐专业**：{target.major or '相关专业'}\n"
+    out += f"   - **录取概率估计**：{target.probability:.1f}%\n"
+    out += f"   - **2025年最低投档线**：{target.min_score} 分 (最低位次：第 {target.min_rank} 名)\n"
+    out += f"   - **办学性质与费用**：{target.university.ownership or '公办'} / 细分学费约 {spec_tuition}元/年 (住宿费约 {target.university.accommodation_fee or 1200}元/年)\n"
+    
+    if academic_str:
+        out += f"   - **学科实力与办学层次**：{academic_str}\n"
+    if bg_str:
+        out += f"   - **办学底蕴与名片**：{bg_str}\n"
+    if employ_str:
+        out += f"   - **深造与就业前景**：{employ_str}\n"
+        if target.university.key_employers:
+            out += f"     * 核心合作单位去向：{'、'.join(target.university.key_employers[:4])}\n"
+            
+    out += f"   - **{history_str}**\n"
+    out += f"   - **规划建议**：{target.analysis or '分数线接近，建议作为填报志愿选择，重点关注专业倾向。'}\n\n"
+    return out
+
+
 def generate_markdown_report(student: Student, result, scores_raw: list[dict], major_id_to_name: dict) -> str:
     """生成 Markdown 报告格式文本"""
     interests = "、".join(student.interests or []) if student.interests else "无"
@@ -204,14 +286,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
 """
     if result.high_targets:
         for i, target in enumerate(result.high_targets, 1):
-            history_str = format_history_scores(target, scores_raw, major_id_to_name)
-            report += f"{i}. **{target.university.name}** ({target.university.location})\n"
-            report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
-            report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
-            report += f"   - **办学性质/学费**：{target.university.ownership or '公办'} / 约 {target.university.tuition_fee or 5500}元/年\n"
-            report += f"   - **{history_str}**\n"
-            report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
-            report += f"   - **规划建议**：{target.analysis or '分数线接近，建议作为冲刺志愿填报，关注省排名动态。'}\n\n"
+            report += format_target_university(i, target, scores_raw, major_id_to_name)
     else:
         report += "* 暂无符合条件的冲刺目标高校，建议根据一分一段表微调志愿范围。\n\n"
 
@@ -219,14 +294,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
 """
     if result.medium_targets:
         for i, target in enumerate(result.medium_targets, 1):
-            history_str = format_history_scores(target, scores_raw, major_id_to_name)
-            report += f"{i}. **{target.university.name}** ({target.university.location})\n"
-            report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
-            report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
-            report += f"   - **办学性质/学费**：{target.university.ownership or '公办'} / 约 {target.university.tuition_fee or 5500}元/年\n"
-            report += f"   - **{history_str}**\n"
-            report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
-            report += f"   - **规划建议**：{target.analysis or '分数匹配度高，录取概率较大，建议作为稳妥志愿填报。'}\n\n"
+            report += format_target_university(i, target, scores_raw, major_id_to_name)
     else:
         report += "* 暂无符合条件的稳妥目标高校。\n\n"
 
@@ -234,14 +302,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
 """
     if result.low_targets:
         for i, target in enumerate(result.low_targets, 1):
-            history_str = format_history_scores(target, scores_raw, major_id_to_name)
-            report += f"{i}. **{target.university.name}** ({target.university.location})\n"
-            report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
-            report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
-            report += f"   - **办学性质/学费**：{target.university.ownership or '公办'} / 约 {target.university.tuition_fee or 5500}元/年\n"
-            report += f"   - **{history_str}**\n"
-            report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
-            report += f"   - **规划建议**：{target.analysis or '分数留有充足安全余量，录取极有保障，建议作为保底志愿填报。'}\n\n"
+            report += format_target_university(i, target, scores_raw, major_id_to_name)
     else:
         report += "* 暂无符合条件的保底目标高校。\n\n"
 
