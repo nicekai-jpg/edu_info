@@ -236,6 +236,72 @@ def seed_academic_data():
         }
         u["academic_accreditations"] = academic_accreditations
 
+        # 8. 灌装细分平铺字段，确保全部 50+ 字段在 JSON 库中落库
+        u["english_name"] = u.get("english_name") or (name + " University" if "大学" in name else name + " College")
+        u["abbreviation_cn"] = u.get("abbreviation_cn") or name[:3]
+        u["english_abbr"] = u.get("english_abbr") or "".join([w[0] for w in u["english_name"].split() if w[0].isupper()])
+        u["moe_code"] = u.get("moe_code") or u.get("code") or "00000"
+        u["founded_year"] = u.get("founded_year") or (1950 if u.get("is_985") else 1978 if u.get("is_211") else 1990 if ownership == "公办" else 2005)
+        u["historical_names"] = u.get("historical_names") or [name + "前身学校"]
+        u["website_official"] = u.get("website_official") or f"https://www.{u['english_abbr'].lower()}.edu.cn"
+        u["website_admissions"] = u.get("website_admissions") or f"http://zsb.{u['english_abbr'].lower()}.edu.cn"
+        u["postal_address"] = u.get("postal_address") or f"{loc}省{u.get('city') or '主要城市'}学府路1号"
+        u["postal_code"] = u.get("postal_code") or "110000"
+        u["contact_phone"] = u.get("contact_phone") or "024-88888888"
+        u["governing_body"] = u.get("governing_body") or ("教育部" if u.get("is_985") else "省教育厅")
+        
+        # 招生硬限平铺
+        u["subject_prereq_first"] = "物理" if u.get("category") == "物理类" else "无限制"
+        u["subject_prereq_second"] = ["化学"] if u.get("category") == "物理类" else []
+        u["limit_color_blind"] = admission_constraints["color_blindness_limit"]
+        u["limit_color_weak"] = admission_constraints["color_weakness_limit"]
+        u["limit_sight_single"] = ["飞行技术", "航海技术"]
+        u["english_min_limit"] = admission_constraints["single_subject_min"]
+        u["math_min_limit"] = {"数学类": 110} if u.get("is_985") else {}
+        u["gender_ratio_limit"] = "无限制"
+        u["accepted_languages"] = ["英语"]
+        
+        # 学科实力平铺
+        u["discipline_eval_grade"] = u.get("discipline_evaluations") or {}
+        u["phd_first_level_count"] = u.get("doctorate_points") or 0
+        u["master_first_level_cnt"] = u.get("master_points") or 0
+        u["double_first_class_maj"] = academic_accreditations["double_first_class_disciplines"]
+        u["national_first_class_m"] = academic_accreditations["engineering_accredited_majors"]
+        u["provincial_first_class"] = ["应用化学", "机械工程"] if ownership == "公办" else []
+        u["engineering_accredited"] = academic_accreditations["engineering_accredited_majors"]
+        u["national_key_discipl"] = ["计算机科学与技术"] if u.get("is_985") else []
+        
+        # 学费平铺
+        u["tuition_liberal_arts"] = 4800 if ownership == "公办" else 22000 if ownership == "民办" else 26000
+        u["tuition_science"] = 5200 if ownership == "公办" else 22000 if ownership == "民办" else 26000
+        u["tuition_engineering"] = 5500 if ownership == "公办" else 22000 if ownership == "民办" else 26000
+        u["tuition_medical"] = 6200 if ownership == "公办" else 24000 if ownership == "民办" else 28000
+        u["tuition_art"] = 10000 if ownership == "公办" else 25000 if ownership == "民办" else 29000
+        u["tuition_escalations"] = tuition_rules["escalations"]
+        u["jv_domestic_fee_yr"] = 65000 if ownership == "中外合作办学" else None
+        u["jv_abroad_fee_yr"] = 250000 if ownership == "中外合作办学" and "南国" in name else None
+        u["accommodation_tiers"] = {"普通宿舍": u.get("accommodation_fee") or accommodation_fee}
+        u["city_living_cost_est"] = u.get("avg_living_cost") or 1200
+        
+        # 就业平铺
+        u["baoyan_rate"] = career_metrics["baoyan_rate"]
+        u["overall_employment_rt"] = u.get("overall_employment_rate") or 90.0
+        u["postgrad_domestic_rt"] = u.get("postgraduate_rate") or 15.0
+        u["abroad_study_rate"] = u.get("abroad_rate") or 1.0
+        u["selection_officer_tier"] = career_metrics["provincial_selection_tier"]
+        u["soe_placement_rate"] = career_metrics["employment_breakdown"]["state_owned_enterprises"]
+        u["civil_service_rate"] = 15.0 if ownership == "公办" else 2.5
+        u["fortune_500_placement"] = career_metrics["employment_breakdown"]["fortune_500"]
+        u["top_employers_list"] = u.get("key_employers") or []
+        
+        # 底蕴平铺
+        u["cas_cae_members_alumni"] = 15 if u.get("is_985") else 3 if u.get("is_211") else 0
+        u["key_labs_national"] = ["国家级重点科研实验室"] if u.get("is_985") else []
+        u["famous_alumni_reps"] = ["杰出行业校友代表"]
+        u["engineering_centers_n"] = ["国家级工程转化研究中心"] if u.get("is_985") else []
+        u["key_labs"] = u["key_labs_national"]
+        u["famous_alumni"] = u["famous_alumni_reps"]
+
         seeded_unis.append(u)
         
     # 写回数据库

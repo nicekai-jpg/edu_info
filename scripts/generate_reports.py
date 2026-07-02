@@ -31,40 +31,16 @@ def load_universities_from_json(data_dir: Path) -> list[University]:
         
     return [
         University(
-            id=u["id"],
-            name=u["name"],
-            code=u.get("code") or "00000",
-            location=u.get("location") or "未知",
-            type=u.get("type") or "综合",
-            is_985=bool(u.get("is_985", False)),
-            is_211=bool(u.get("is_211", False)),
-            is_double_first_class=bool(u.get("is_double_first_class", False)),
-            project_type=u.get("project_type"),
-            ownership=u.get("ownership") or "公办",
-            tuition_fee=u.get("tuition_fee") or 5500,
-            english_name=u.get("english_name"),
-            website=u.get("website"),
-            ownership_type=u.get("ownership_type") or u.get("ownership") or "公办",
-            industry_tags=u.get("industry_tags") or [],
-            city_level=u.get("city_level"),
-            discipline_evaluations=u.get("discipline_evaluations") or {},
-            doctorate_points=u.get("doctorate_points") or 0,
-            master_points=u.get("master_points") or 0,
-            national_key_disciplines=u.get("national_key_disciplines") or [],
-            accommodation_fee=u.get("accommodation_fee") or 1200,
-            major_tuition_fees=u.get("major_tuition_fees") or {},
-            avg_living_cost=u.get("avg_living_cost"),
-            overall_employment_rate=u.get("overall_employment_rate"),
-            postgraduate_rate=u.get("postgraduate_rate"),
-            abroad_rate=u.get("abroad_rate"),
-            key_employers=u.get("key_employers") or [],
-            description=u.get("description"),
-            key_labs=u.get("key_labs") or [],
-            famous_alumni=u.get("famous_alumni") or [],
-            tuition_rules=u.get("tuition_rules") or {},
-            admission_constraints=u.get("admission_constraints") or {},
-            career_metrics=u.get("career_metrics") or {},
-            academic_accreditations=u.get("academic_accreditations") or {}
+            **{**u,
+               "code": u.get("code") or "00000",
+               "location": u.get("location") or "未知",
+               "type": u.get("type") or "综合",
+               "is_985": bool(u.get("is_985", False)),
+               "is_211": bool(u.get("is_211", False)),
+               "is_double_first_class": bool(u.get("is_double_first_class", False)),
+               "ownership": u.get("ownership") or "公办",
+               "tuition_fee": u.get("tuition_fee") or 5500
+            }
         ) for u in uni_data
     ]
 

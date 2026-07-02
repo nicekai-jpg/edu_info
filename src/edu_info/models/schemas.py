@@ -25,40 +25,92 @@ class University(BaseModel):
     ownership: str | None = None
     tuition_fee: int | None = None
     
-    # 扩展：高校全维特征画像
+    # 1. 基础信息与沿革
     english_name: str | None = None
-    website: str | None = None
-    ownership_type: str | None = None  # 办学性质详细类别
-    industry_tags: list[str] = []
+    abbreviation_cn: str | None = None
+    english_abbr: str | None = None
+    moe_code: str | None = None
+    founded_year: int | None = None
+    historical_names: list[str] = []
+    website_official: str | None = None
+    website_admissions: str | None = None
+    postal_address: str | None = None
+    postal_code: str | None = None
+    contact_phone: str | None = None
+    governing_body: str | None = None
+    ownership_type: str | None = None
     city_level: str | None = None
+    industry_tags: list[str] = []
     
-    # 学科与学术实力评估
-    discipline_evaluations: dict[str, str] = {}
-    doctorate_points: int = 0
-    master_points: int = 0
-    national_key_disciplines: list[str] = []
+    # 2. 招生录取限制
+    subject_prereq_first: str | None = None
+    subject_prereq_second: list[str] = []
+    limit_color_blind: list[str] = []
+    limit_color_weak: list[str] = []
+    limit_sight_single: list[str] = []
+    english_min_limit: dict[str, Any] = {}
+    math_min_limit: dict[str, Any] = {}
+    gender_ratio_limit: str | None = None
+    accepted_languages: list[str] = []
     
-    # 细分费用明细
-    accommodation_fee: int | None = None
-    major_tuition_fees: dict[str, int] = {}
-    avg_living_cost: int | None = None
+    # 3. 学科与学术实力
+    discipline_eval_grade: dict[str, str] = {}
+    phd_first_level_count: int = 0
+    master_first_level_cnt: int = 0
+    double_first_class_maj: list[str] = []
+    national_first_class_m: list[str] = []
+    provincial_first_class: list[str] = []
+    engineering_accredited: list[str] = []
+    national_key_discipl: list[str] = []
     
-    # 就业与深造走势
-    overall_employment_rate: float | None = None
-    postgraduate_rate: float | None = None
-    abroad_rate: float | None = None
-    key_employers: list[str] = []
+    # 4. 费用与生活成本
+    tuition_liberal_arts: int | None = None
+    tuition_science: int | None = None
+    tuition_engineering: int | None = None
+    tuition_medical: int | None = None
+    tuition_art: int | None = None
+    tuition_escalations: dict[str, list[int]] = {}
+    jv_domestic_fee_yr: int | None = None
+    jv_abroad_fee_yr: int | None = None
+    accommodation_tiers: dict[str, int] = {}
+    city_living_cost_est: int | None = None
     
-    # 历史底蕴与背景
+    # 5. 高质量就业与去向
+    baoyan_rate: float | None = None
+    overall_employment_rt: float | None = None
+    postgrad_domestic_rt: float | None = None
+    abroad_study_rate: float | None = None
+    selection_officer_tier: str | None = None
+    soe_placement_rate: float | None = None
+    civil_service_rate: float | None = None
+    fortune_500_placement: float | None = None
+    top_employers_list: list[str] = []
+    
+    # 6. 底蕴名片与背景
+    cas_cae_members_alumni: int = 0
+    key_labs_national: list[str] = []
+    famous_alumni_reps: list[str] = []
+    engineering_centers_n: list[str] = []
     description: str | None = None
-    key_labs: list[str] = []
-    famous_alumni: list[str] = []
-    
-    # 扩展：全维专业级限制与特征画像
+
+    # 兼容嵌套字典字段
     tuition_rules: dict[str, Any] = {}
     admission_constraints: dict[str, Any] = {}
     career_metrics: dict[str, Any] = {}
     academic_accreditations: dict[str, Any] = {}
+    major_tuition_fees: dict[str, int] = {}
+    
+    # 兼容旧版本平铺字段
+    discipline_evaluations: dict[str, str] = {}
+    doctorate_points: int = 0
+    master_points: int = 0
+    accommodation_fee: int | None = None
+    overall_employment_rate: float | None = None
+    postgraduate_rate: float | None = None
+    abroad_rate: float | None = None
+    key_employers: list[str] = []
+    key_labs: list[str] = []
+    famous_alumni: list[str] = []
 
 
 class Major(BaseModel):
