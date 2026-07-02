@@ -186,6 +186,24 @@ def format_target_university(i: int, target: TargetUniversity, scores_raw: list[
         bg_parts.append(f"知名杰出校友：{'、'.join(target.university.famous_alumni)}")
     bg_str = "; ".join(bg_parts)
     
+    # 官方联络与满意度评价
+    contact_parts = []
+    if target.university.website_official:
+        contact_parts.append(f"[学校官网]({target.university.website_official})")
+    elif target.university.website:
+        contact_parts.append(f"[学校官网]({target.university.website})")
+    if target.university.website_admissions:
+        contact_parts.append(f"[招生官网]({target.university.website_admissions})")
+    if target.university.contact_phone:
+        contact_parts.append(f"招办电话：{target.university.contact_phone}")
+    contact_str = " | ".join(contact_parts) if contact_parts else ""
+
+    app_parts = []
+    if target.university.appraisal_ratings:
+        for k, v in target.university.appraisal_ratings.items():
+            app_parts.append(f"{k}满意度 {v:.1f}/5.0")
+    app_str = ", ".join(app_parts) if app_parts else ""
+
     # 组合输出
     out = f"{i}. **{target.university.name}** ({target.university.location})\n"
     out += f"   - **推荐专业**：{target.major or '相关专业'}\n"
@@ -193,6 +211,10 @@ def format_target_university(i: int, target: TargetUniversity, scores_raw: list[
     out += f"   - **2025年最低投档线**：{target.min_score} 分 (最低位次：第 {target.min_rank} 名)\n"
     out += f"   - **办学性质与费用**：{target.university.ownership or '公办'} / 细分学费约 {spec_tuition}元/年 (住宿费约 {target.university.accommodation_fee or 1200}元/年)\n"
     
+    if contact_str:
+        out += f"   - **官方联络**：{contact_str}\n"
+    if app_str:
+        out += f"   - **在校生实名好评度 (阳光高考)**：{app_str}\n"
     if academic_str:
         out += f"   - **学科实力与办学层次**：{academic_str}\n"
     if bg_str:

@@ -99,6 +99,7 @@ class University(BaseModel):
     career_metrics: dict[str, Any] = {}
     academic_accreditations: dict[str, Any] = {}
     major_tuition_fees: dict[str, int] = {}
+    appraisal_ratings: dict[str, float] = {}
     
     # 兼容旧版本平铺字段
     discipline_evaluations: dict[str, str] = {}
