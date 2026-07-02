@@ -139,6 +139,47 @@ class TargetGenerator:
                     logger.info(f"【家庭预算拦截】跳过高校 {university.name}：专业 {major}，特定收费 {specific_tuition}元/年，超过家庭上限 {student.family_budget}万元/年")
                     continue
 
+            # 校验身体体检限制条件
+            constraints = university.admission_constraints or {}
+            is_health_ok = True
+            health_reason = ""
+            if getattr(student, "color_blind", False):
+                blind_limits = constraints.get("color_blindness_limit") or []
+                if any(limit in major for limit in blind_limits):
+                    is_health_ok = False
+                    health_reason = "考生色盲受限"
+            if getattr(student, "color_weak", False):
+                weak_limits = constraints.get("color_weakness_limit") or []
+                if any(limit in major for limit in weak_limits):
+                    is_health_ok = False
+                    health_reason = "考生色弱受限"
+            if not is_health_ok:
+                logger.info(f"【体检要求拦截】跳过高校 {university.name}：专业 {major} 因【{health_reason}】被拦截")
+                continue
+
+            # 校验单科成绩最低限制条件
+            is_single_subject_ok = True
+            subject_reason = ""
+            single_subject_mins = constraints.get("single_subject_min") or {}
+            for major_pattern, subject_limits in single_subject_mins.items():
+                if major_pattern in major:
+                    for sub_name, min_val in subject_limits.items():
+                        if sub_name == "外语":
+                            score_val = getattr(student, "english_score", None)
+                            if score_val is not None and score_val < min_val:
+                                is_single_subject_ok = False
+                                subject_reason = f"外语单科分 {score_val} 低于专业下限 {min_val}"
+                                break
+                        elif sub_name == "数学":
+                            score_val = getattr(student, "math_score", None)
+                            if score_val is not None and score_val < min_val:
+                                is_single_subject_ok = False
+                                subject_reason = f"数学单科分 {score_val} 低于专业下限 {min_val}"
+                                break
+            if not is_single_subject_ok:
+                logger.info(f"【单科成绩拦截】跳过高校 {university.name}：专业 {major} 因【{subject_reason}】被拦截")
+                continue
+
             # 校验高考选科条件限制
             from edu_info.core.subject_validator import SubjectValidator
             student_subjects = getattr(student, "subjects", None)

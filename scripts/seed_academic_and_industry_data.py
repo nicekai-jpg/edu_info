@@ -184,6 +184,58 @@ def seed_academic_data():
         if not u.get("description"):
             u["description"] = f"{name}是位于我国{loc}的{u.get('type', '综合')}类大学。学校致力于培养具有创新精神的高水平人才。"
             
+        # 7. 灌装扩展嵌套字典结构（精细招生限制、多维费用明细、深造及专业认证）
+        tuition_rules = {
+            "default_tuition": u.get("tuition_fee") or tuition_fee,
+            "accommodation_fee": u.get("accommodation_fee") or accommodation_fee,
+            "escalations": {},
+            "joint_ventures": {}
+        }
+        if ownership == "中外合作办学":
+            tuition_rules["joint_ventures"] = {
+                "中外合作办学专业": {
+                    "model": "4+0" if "南国" not in name else "2+2",
+                    "domestic_fee": 65000,
+                    "abroad_fee": 0 if "南国" not in name else 250000
+                }
+            }
+        else:
+            tuition_rules["escalations"] = {
+                "软件工程": [5500, 5500, 14000, 14000] if ownership == "公办" else [22000, 22000, 24000, 24000]
+            }
+        u["tuition_rules"] = tuition_rules
+
+        admission_constraints = {
+            "color_blindness_limit": ["化学", "生物", "化工", "制药", "医学", "药学"],
+            "color_weakness_limit": ["化学", "生物", "药学", "食品", "医学", "化工", "制药"],
+            "single_subject_min": {}
+        }
+        if ownership == "中外合作办学":
+            admission_constraints["single_subject_min"]["中外合作专业"] = {"外语": 105}
+        else:
+            admission_constraints["single_subject_min"]["英语专业"] = {"外语": 115}
+        u["admission_constraints"] = admission_constraints
+
+        career_metrics = {
+            "baoyan_rate": 22.5 if u.get("is_985") else 12.8 if u.get("is_211") else 3.2 if ownership == "公办" else 0.5,
+            "central_selection": bool(u.get("is_985")),
+            "provincial_selection_tier": "第一梯队" if u.get("is_985") else "第二梯队" if u.get("is_211") else "第三梯队" if ownership == "公办" else "无认定",
+            "employment_breakdown": {
+                "state_owned_enterprises": 38.5 if u.get("is_985") else 28.0 if u.get("is_211") else 12.0 if ownership == "公办" else 2.5,
+                "fortune_500": 24.2 if u.get("is_985") else 15.0 if u.get("is_211") else 5.0 if ownership == "公办" else 1.0,
+                "postgraduate_rate": u.get("postgraduate_rate") or postgraduate_rate
+            },
+            "key_employers": u.get("key_employers") or key_employers
+        }
+        u["career_metrics"] = career_metrics
+
+        academic_accreditations = {
+            "double_first_class_disciplines": ["计算机科学与技术", "控制科学与工程"] if u.get("is_985") else ["化学工程与技术"] if u.get("is_211") and "化工" in name else [],
+            "engineering_accredited_majors": ["计算机科学与技术", "软件工程", "自动化", "机械设计制造及其自动化"] if ownership == "公办" else [],
+            "national_base_majors": ["数学与应用数学班", "物理学基地班"] if u.get("is_985") else []
+        }
+        u["academic_accreditations"] = academic_accreditations
+
         seeded_unis.append(u)
         
     # 写回数据库

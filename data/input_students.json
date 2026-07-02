@@ -7,6 +7,7 @@
     "subjects": ["物理", "生物", "地理"],
     "total_score": 685.0,
     "ranking": 1000,
+    "english_score": 90.0,
     "interests": ["计算机", "人工智能"],
     "family_budget": 10.0,
     "preferred_locations": ["北京", "辽宁"]
@@ -31,9 +32,10 @@
     "subjects": ["物理", "化学", "生物"],
     "total_score": 480.0,
     "ranking": 70000,
-    "interests": ["机械", "自动化"],
+    "interests": ["医学"],
     "family_budget": 1.5,
     "preferred_locations": ["辽宁"],
+    "color_weak": true,
     "constraints": {}
   }
 ]

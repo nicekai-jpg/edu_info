@@ -53,6 +53,12 @@ class University(BaseModel):
     description: str | None = None
     key_labs: list[str] = []
     famous_alumni: list[str] = []
+    
+    # 扩展：全维专业级限制与特征画像
+    tuition_rules: dict[str, Any] = {}
+    admission_constraints: dict[str, Any] = {}
+    career_metrics: dict[str, Any] = {}
+    academic_accreditations: dict[str, Any] = {}
 
 
 class Major(BaseModel):
@@ -99,6 +105,10 @@ class Student(BaseModel):
     family_budget: float | None = None
     preferred_locations: list[str] | None = None
     constraints: dict[str, Any] | None = None
+    
+    # 身体条件限制（健康指标）
+    color_blind: bool = False
+    color_weak: bool = False
 
     planning_status: str = "未开始"
 

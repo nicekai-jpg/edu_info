@@ -60,7 +60,11 @@ def load_universities_from_json(data_dir: Path) -> list[University]:
             key_employers=u.get("key_employers") or [],
             description=u.get("description"),
             key_labs=u.get("key_labs") or [],
-            famous_alumni=u.get("famous_alumni") or []
+            famous_alumni=u.get("famous_alumni") or [],
+            tuition_rules=u.get("tuition_rules") or {},
+            admission_constraints=u.get("admission_constraints") or {},
+            career_metrics=u.get("career_metrics") or {},
+            academic_accreditations=u.get("academic_accreditations") or {}
         ) for u in uni_data
     ]
 
@@ -369,10 +373,14 @@ def main():
             category=s_data["category"],
             total_score=s_data.get("total_score"),
             ranking=s_data.get("ranking"),
+            english_score=s_data.get("english_score"),
+            math_score=s_data.get("math_score"),
             interests=s_data.get("interests", []),
             family_budget=s_data.get("family_budget", 10.0),
             preferred_locations=s_data.get("preferred_locations", []),
             subjects=s_data.get("subjects", []),
+            color_blind=s_data.get("color_blind", False),
+            color_weak=s_data.get("color_weak", False)
         )
         
         # 运行规划计算
