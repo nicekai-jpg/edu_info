@@ -22,5 +22,18 @@
     "interests": ["法学", "金融学"],
     "family_budget": 15.0,
     "preferred_locations": ["上海", "江苏"]
+  },
+  {
+    "name": "王铁柱",
+    "grade": "高三",
+    "city": "鞍山",
+    "category": "物理类",
+    "subjects": ["物理", "化学", "生物"],
+    "total_score": 480.0,
+    "ranking": 70000,
+    "interests": ["机械", "自动化"],
+    "family_budget": 1.5,
+    "preferred_locations": ["辽宁"],
+    "constraints": {}
   }
 ]

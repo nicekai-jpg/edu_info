@@ -39,7 +39,9 @@ def load_universities_from_json(data_dir: Path) -> list[University]:
             is_985=bool(u.get("is_985", False)),
             is_211=bool(u.get("is_211", False)),
             is_double_first_class=bool(u.get("is_double_first_class", False)),
-            project_type=u.get("project_type")
+            project_type=u.get("project_type"),
+            ownership=u.get("ownership") or "公办",
+            tuition_fee=u.get("tuition_fee") or 5500
         ) for u in uni_data
     ]
 
@@ -206,6 +208,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
             report += f"{i}. **{target.university.name}** ({target.university.location})\n"
             report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
             report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
+            report += f"   - **办学性质/学费**：{target.university.ownership or '公办'} / 约 {target.university.tuition_fee or 5500}元/年\n"
             report += f"   - **{history_str}**\n"
             report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
             report += f"   - **规划建议**：{target.analysis or '分数线接近，建议作为冲刺志愿填报，关注省排名动态。'}\n\n"
@@ -220,6 +223,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
             report += f"{i}. **{target.university.name}** ({target.university.location})\n"
             report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
             report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
+            report += f"   - **办学性质/学费**：{target.university.ownership or '公办'} / 约 {target.university.tuition_fee or 5500}元/年\n"
             report += f"   - **{history_str}**\n"
             report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
             report += f"   - **规划建议**：{target.analysis or '分数匹配度高，录取概率较大，建议作为稳妥志愿填报。'}\n\n"
@@ -234,6 +238,7 @@ def generate_markdown_report(student: Student, result, scores_raw: list[dict], m
             report += f"{i}. **{target.university.name}** ({target.university.location})\n"
             report += f"   - **推荐专业**：{target.major or '相关专业'}\n"
             report += f"   - **2025最低分/位次**：{target.min_score} 分 / 第 {target.min_rank} 名\n"
+            report += f"   - **办学性质/学费**：{target.university.ownership or '公办'} / 约 {target.university.tuition_fee or 5500}元/年\n"
             report += f"   - **{history_str}**\n"
             report += f"   - **录取概率估计**：{target.probability:.1f}%\n"
             report += f"   - **规划建议**：{target.analysis or '分数留有充足安全余量，录取极有保障，建议作为保底志愿填报。'}\n\n"

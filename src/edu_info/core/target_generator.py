@@ -175,6 +175,13 @@ class TargetGenerator:
                 if score_diff > 30:
                     continue
 
+            # 检查学费是否超出家庭年度预算限制（family_budget，单位为万元）
+            if student.family_budget is not None and university.tuition_fee is not None:
+                tuition_in_wan = university.tuition_fee / 10000.0
+                if tuition_in_wan > student.family_budget:
+                    logger.info(f"【家庭预算拦截】跳过高校 {university.name}：办学性质 {university.ownership}，学费 {university.tuition_fee}元/年，超过预算上限 {student.family_budget}万元/年")
+                    continue
+
             filtered.append(university)
 
         return filtered

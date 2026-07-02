@@ -22,6 +22,8 @@ class University(BaseModel):
     is_211: bool = False
     is_double_first_class: bool = False
     project_type: str | None = None
+    ownership: str | None = None
+    tuition_fee: int | None = None
 
 
 class Major(BaseModel):
