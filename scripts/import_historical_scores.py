@@ -273,13 +273,13 @@ def main():
     score_list = sorted(scores, key=lambda x: (x["year"], x["university_id"], x["major_id"], x["category"]))
     
     logger.info("保存整合后的正式 JSON 文件...")
-    with open(processed_dir / "universities_2025.json", "w", encoding="utf-8") as f:
+    with open(processed_dir / "universities.json", "w", encoding="utf-8") as f:
         json.dump(uni_list, f, ensure_ascii=False, indent=2)
         
-    with open(processed_dir / "majors_2025.json", "w", encoding="utf-8") as f:
+    with open(processed_dir / "majors.json", "w", encoding="utf-8") as f:
         json.dump(major_list, f, ensure_ascii=False, indent=2)
         
-    with open(processed_dir / "scores_2025.json", "w", encoding="utf-8") as f:
+    with open(processed_dir / "scores.json", "w", encoding="utf-8") as f:
         json.dump(score_list, f, ensure_ascii=False, indent=2)
         
     # 分年份汇总显示

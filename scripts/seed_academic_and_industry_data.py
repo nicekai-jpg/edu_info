@@ -10,7 +10,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("academic_seeder")
 
-DB_PATH = Path("data/processed/universities_2025.json")
+DB_PATH = Path("data/processed/universities.json")
 
 # 1. 行业标签 Seeding 列表
 INDUSTRY_TAGS = {

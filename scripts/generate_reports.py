@@ -23,7 +23,7 @@ logger = setup_logger("batch_report_generator")
 
 def load_universities_from_json(data_dir: Path) -> list[University]:
     """直接从 JSON 文件加载高校列表"""
-    file_path = data_dir / "universities_2025.json"
+    file_path = data_dir / "universities.json"
     logger.info(f"从 {file_path} 加载高校数据...")
     
     with open(file_path, encoding="utf-8") as f:
@@ -46,7 +46,7 @@ def load_universities_from_json(data_dir: Path) -> list[University]:
 
 def load_score_data_from_json(data_dir: Path) -> tuple[dict[int, ScoreRange], list[dict]]:
     """直接从 JSON 分数文件在内存中过滤 2025 年数据用于计算，并保留完整数据列表用于历史匹配"""
-    file_path = data_dir / "scores_2025.json"
+    file_path = data_dir / "scores.json"
     logger.info(f"从 {file_path} 加载并聚合分数数据...")
     
     with open(file_path, encoding="utf-8") as f:
@@ -339,7 +339,7 @@ def main():
     score_data, scores_raw = load_score_data_from_json(data_dir)
     
     # 加载专业库，用于历史映射名称查询
-    with open(data_dir / "majors_2025.json", encoding="utf-8") as f:
+    with open(data_dir / "majors.json", encoding="utf-8") as f:
         majors_raw = json.load(f)
     major_id_to_name = {m["id"]: m["name"] for m in majors_raw}
     

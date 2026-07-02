@@ -7,8 +7,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-DB_PATH = Path("data/processed/universities_2025.json")
-BACKUP_PATH = Path("data/processed/universities_2025_backup.json")
+DB_PATH = Path("data/processed/universities.json")
+BACKUP_PATH = Path("data/processed/universities_backup.json")
 SCHOOL_CODE_URL = "https://static-data.gaokao.cn/www/2.0/school/school_code.json"
 
 def fetch_json(url: str) -> dict | None:
